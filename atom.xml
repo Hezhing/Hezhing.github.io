@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezhing.top/"/>
-  <updated>2018-06-20T16:09:22.871Z</updated>
+  <updated>2018-06-22T18:02:50.481Z</updated>
   <id>http://hezhing.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>中序后序确定先序</title>
+    <link href="http://hezhing.top/2018/06/23/Hello-World-0/"/>
+    <id>http://hezhing.top/2018/06/23/Hello-World-0/</id>
+    <published>2018-06-22T17:57:33.000Z</published>
+    <updated>2018-06-22T18:02:50.481Z</updated>
+    
+    <content type="html"><![CDATA[<p>#自己码的<del>凑合着看吧</del>~</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;string.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">typedef struct tree&#123;</span><br><span class="line">char data;</span><br><span class="line">tree *lc,*rc;</span><br><span class="line">&#125;tree;</span><br><span class="line"></span><br><span class="line">char mid[111],last[111];</span><br><span class="line"></span><br><span class="line">void init(tree *&amp;t)</span><br><span class="line">&#123;</span><br><span class="line">t=NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void creat(tree *&amp;p,int left,int right,int &amp;cnt)</span><br><span class="line">&#123;</span><br><span class="line">int i=left;</span><br><span class="line"><span class="keyword">while</span>(last[cnt]!=mid[i])</span><br><span class="line">&#123;</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line">p=new tree;</span><br><span class="line">p-&gt;data=last[cnt];</span><br><span class="line">p-&gt;lc=p-&gt;rc=NULL;</span><br><span class="line"><span class="keyword">if</span>(left&lt;i)</span><br><span class="line">&#123;</span><br><span class="line">cnt--;</span><br><span class="line">creat(p-&gt;lc,left,i-1,cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(right&gt;i)</span><br><span class="line">&#123;</span><br><span class="line">cnt--;</span><br><span class="line">creat(p-&gt;rc,i+1,right,cnt);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="built_in">print</span>(tree *p)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c"</span>,p-&gt;data);</span><br><span class="line"><span class="keyword">if</span>(p-&gt;lc!=NULL) <span class="built_in">print</span>(p-&gt;lc);</span><br><span class="line"><span class="keyword">if</span>(p-&gt;rc!=NULL) <span class="built_in">print</span>(p-&gt;rc);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">while</span>(scanf(<span class="string">"%s%s"</span>,mid,last)!=EOF)</span><br><span class="line">&#123;</span><br><span class="line">tree *p;</span><br><span class="line">init(p);</span><br><span class="line">int len=strlen(mid);</span><br><span class="line">int cnt=len-1;</span><br><span class="line">creat(p,0,len-1,cnt);</span><br><span class="line"><span class="built_in">print</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> 0;</span><br><span class="line">&#125;*/</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#自己码的&lt;del&gt;凑合着看吧&lt;/del&gt;~&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="my first blog" scheme="http://hezhing.top/tags/my-first-blog/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

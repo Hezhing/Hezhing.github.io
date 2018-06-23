@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[中序后序确定先序]]></title>
+    <url>%2F2018%2F06%2F23%2FHello-World-0%2F</url>
+    <content type="text"><![CDATA[题目名称：利用二叉树中序及后序遍历确定该二叉树的先序序列题目描述：已知二叉树的中序和先序遍历可以唯一确定后序遍历、已知中序和后序遍历可以唯一确定先序遍历，但已知先序和后序，却不一定能唯一确定中序遍历。现要求根据输入的中序遍历结果及后序遍历结果，要求输出其先序遍历结果。 Input: 第一行为中序序列第二行为后续序列 Output: 输出为遍历二叉树得到的先序序列 Simple Input: BFDAEGCFDBGECA Simple Output: ABDFCEG AC代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162（1）自己码的凑合着看吧，常规的树的解决方法。#include&lt;iostream&gt;#include&lt;stdlib.h&gt;#include&lt;string.h&gt;#include&lt;stdio.h&gt;using namespace std;typedef struct tree&#123; char data; tree *lc,*rc;&#125;tree;char mid[111],last[111];void init(tree *&amp;t)&#123; t=NULL;&#125;void creat(tree *&amp;p,int left,int right,int &amp;cnt)&#123; int i=left; while(last[cnt]!=mid[i]) &#123; i++; &#125; p=new tree; p-&gt;data=last[cnt]; p-&gt;lc=p-&gt;rc=NULL; if(left&lt;i) &#123; cnt--; creat(p-&gt;lc,left,i-1,cnt); &#125; if(right&gt;i) &#123; cnt--; creat(p-&gt;rc,i+1,right,cnt); &#125;&#125;void print(tree *p)&#123; printf("%c",p-&gt;data); if(p-&gt;lc!=NULL) print(p-&gt;lc); if(p-&gt;rc!=NULL) print(p-&gt;rc);&#125;int main()&#123; while(scanf("%s%s",mid,last)!=EOF) &#123; tree *p; init(p); int len=strlen(mid); int cnt=len-1; creat(p,0,len-1,cnt); print(p); &#125; return 0;&#125;*/ 123456789101112131415161718192021222324(2) 这个是参考了刘大佬的博客写的递归算法，相对来说很难理解，但好在代码更加简洁，更容易AC。#include&lt;bits/stdc++.h&gt;using namespace std;char zhong[1000],hou[1000];void AC(int z,int h,int n)&#123; if(n&lt;=0) return; cout&lt;&lt;hou[h+n-1]; int i=z; while(zhong[i]!=hou[h+n-1]) i++; AC(z,h,i-z); AC(i+1,h+i-z,n+z-i-1);&#125;int main()&#123; while(~scanf("%s%s",zhong,hou)) AC(0,0,strlen(zhong)); return 0;&#125;]]></content>
+      <tags>
+        <tag>-测试 -算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F06%2F21%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>

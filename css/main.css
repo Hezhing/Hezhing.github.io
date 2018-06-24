@@ -2116,7 +2116,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2bffff;
+  background: #baff2a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2966,4 +2966,7 @@ embed {
   #footer a {
     color: #fff;
   }
+}
+.site-meta {
+  background: #0684bd;
 }

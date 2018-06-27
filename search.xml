@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[中序后序确定先序]]></title>
-    <url>%2F2018%2F06%2F23%2FHello-World-0%2F</url>
-    <content type="text"><![CDATA[题目名称：利用二叉树中序及后序遍历确定该二叉树的先序序列题目描述： 已知二叉树的中序和先序遍历可以唯一确定后序遍历、已知中序和后序遍历可以唯一确定先序遍历，但已知先序和后序，却不一定能唯一确定中序遍历。现要求根据输入的中序遍历结果及后序遍历结果，要求输出其先序遍历结果。 Input: 第一行为中序序列第二行为后续序列 Output: 输出为遍历二叉树得到的先序序列 Simple Input: BFDAEGC FDBGECA Simple Output: ABDFCEG AC代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162（1）自己码的凑合着看吧，常规的树的解决方法。#include&lt;iostream&gt;#include&lt;stdlib.h&gt;#include&lt;string.h&gt;#include&lt;stdio.h&gt;using namespace std;typedef struct tree&#123; char data; tree *lc,*rc;&#125;tree;char mid[111],last[111];void init(tree *&amp;t)&#123; t=NULL;&#125;void creat(tree *&amp;p,int left,int right,int &amp;cnt)&#123; int i=left; while(last[cnt]!=mid[i]) &#123; i++; &#125; p=new tree; p-&gt;data=last[cnt]; p-&gt;lc=p-&gt;rc=NULL; if(left&lt;i) &#123; cnt--; creat(p-&gt;lc,left,i-1,cnt); &#125; if(right&gt;i) &#123; cnt--; creat(p-&gt;rc,i+1,right,cnt); &#125;&#125;void print(tree *p)&#123; printf("%c",p-&gt;data); if(p-&gt;lc!=NULL) print(p-&gt;lc); if(p-&gt;rc!=NULL) print(p-&gt;rc);&#125;int main()&#123; while(scanf("%s%s",mid,last)!=EOF) &#123; tree *p; init(p); int len=strlen(mid); int cnt=len-1; creat(p,0,len-1,cnt); print(p); &#125; return 0;&#125;*/ 123456789101112131415161718192021222324(2) 这个是参考了刘大佬的博客写的递归算法，相对来说很难理解，但好在代码更加简洁，更容易AC。#include&lt;bits/stdc++.h&gt;using namespace std;char zhong[1000],hou[1000];void AC(int z,int h,int n)&#123; if(n&lt;=0) return; cout&lt;&lt;hou[h+n-1]; int i=z; while(zhong[i]!=hou[h+n-1]) i++; AC(z,h,i-z); AC(i+1,h+i-z,n+z-i-1);&#125;int main()&#123; while(~scanf("%s%s",zhong,hou)) AC(0,0,strlen(zhong)); return 0;&#125;]]></content>
+    <title><![CDATA[Happy Birthday]]></title>
+    <url>%2F2018%2F06%2F27%2FHappy-Birthday%2F</url>
+    <content type="text"><![CDATA[记陪你的第一次生日2017年6月。 回想起高三那年结束前，你我是同桌，你跟我说快过生日了，但却是高考以后。我就想提前送你一些礼物，无他，只因为你是我同桌。 2017年7月。 后来发生了一些很奇妙的事，渐渐的越来越熟，也就是越来越熟。那年六月，一起高考，那年七月，各奔东西。 2017年8月。 一些事就是缘分问题，也确实是很难的。抉择问题。反正是一起来四川了。挺好的。这个月记得的好像是开学。嗯，对，就是开学。 2017年9月。 这个月印象还是蛮不错的，去了一次成都，第一次去呐，还算可以，问了路程，问了方向，问了倒转车，说走就走了。。 2017年10月。 十月一开学，放假7天，没在学校，去成都浪了。见了三年不见的好友，一起大概的走了成都。反正哪里挤去了哪里，反正缘分这东西，说不清楚。 2017年11月。 这个月没什么太大的波浪，仍然保持着一个月或者两周去看一次的习惯。过的波澜不惊。除了复习备考，好像还有美食节？ 2017年12月。 这个月还凑合，月初啊，月末啊啥的你就过来了，只是来的好像不是时候，完美错过了东八舞池和元旦晚会呐，真是有点遗憾。 2018年1月。 主要在准备考试和考完试的颓废中生活。还行吧，就这样，不过还发现了美食，等着带你来吃。17号回去，一起坐高铁。真是不错。 2018年2月。 这个月就是在家嘛，打游戏多了，你还是挺生气的。14号那天，之前，做了个小视频，送给你了，也就是个小视频呐。凑合。。地址的话，在空间吧。 2018年3月。 开学的日子，去接你，结果你手机被偷了，虽然事情解决了，可是还是心有余悸呐。以后还是要万分小心。不过月底你还是过来陪我耍了两天。开森。 2018年4月。 清明节的时候过去了，我还真的错不过每次的放假呐。一有时间就还是会去，或许就是单纯想去吧。这个月好像实现了半天来回成都？？ 2018年5月。 劳动节的时候去了，也很快就回来了，前一两天，还在学校转悠，第三天还是去了。去了之前没去的地方，还好天气不错。 2018年6月。 因为端午节要考试呐，这个月还是复习备考的一个月，儿童节还是忍住了没去，因为第二天考试。。也在这个月吧，迎来了你的生日呐，还是选择去吧，无他，因为你是我女朋友。 2018年。。。 故事还在继续，那句话咋说来着，我有故事，你有酒吗？]]></content>
       <categories>
-        <category>-学习笔记</category>
+        <category>-杂记</category>
       </categories>
       <tags>
-        <tag>-测试 -算法</tag>
+        <tag>-生活</tag>
       </tags>
   </entry>
   <entry>

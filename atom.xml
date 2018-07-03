@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezhing.top/"/>
-  <updated>2018-07-01T06:32:18.693Z</updated>
+  <updated>2018-07-03T05:44:04.676Z</updated>
   <id>http://hezhing.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在我搭建博客中所遇到的坑</title>
+    <link href="http://hezhing.top/2018/07/02/%E5%9C%A8%E6%88%91%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
+    <id>http://hezhing.top/2018/07/02/在我搭建博客中所遇到的坑/</id>
+    <published>2018-07-02T03:22:12.000Z</published>
+    <updated>2018-07-03T05:44:04.676Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="遇到的第一个坑"><a href="#遇到的第一个坑" class="headerlink" title="遇到的第一个坑"></a>遇到的第一个坑</h2><h3 id="hexo不显示"><a href="#hexo不显示" class="headerlink" title="hexo不显示"></a>hexo不显示</h3><blockquote><p>在安装hexo的过程中输入 hexo -v 查看hexo安装版本的时候，没有显示hexo的版本。</p></blockquote><blockquote><p>安装完毕后，理应显示的图为：<img src="http://wx3.sinaimg.cn/mw690/007bXaCZgy1fsvv33rd38j30be0963yr.jpg" alt="正常图"></p></blockquote><blockquote><p>然而我的显示图为：<img src="http://wx3.sinaimg.cn/mw690/007bXaCZgy1fsvv4j1hgzj30bf08qaa8.jpg" alt="非正常图"></p></blockquote><blockquote><p>解决办法：<img src="http://wx2.sinaimg.cn/mw690/007bXaCZgy1fsvv4m6liwj30ba05d3ya.jpg" alt="解决办法"> 原理：因为需要git bash到你所创建的子文件中，而不是上一层文件中，在上一层文件中不会显示你所安装过的hexo的版本。</p></blockquote><h2 id="遇到的第二个坑"><a href="#遇到的第二个坑" class="headerlink" title="遇到的第二个坑"></a>遇到的第二个坑</h2><h3 id="背景虚化"><a href="#背景虚化" class="headerlink" title="背景虚化"></a>背景虚化</h3><blockquote><p>在我搭建博客过程中，发现背景要么极暗要么极白，很难调节，加上什么背景图片都很难看清字体。起初我想要更改字体的颜色来弥补，后来发现情况不止如此，问了大佬以后才知道可以去更改一下背景，百度半天虚化背景发现这个<a href="https://blog.csdn.net/qq_22844483/article/details/70157310" target="_blank" rel="noopener">背景</a>，没什么进展，问了一个前端大佬，才修改完毕，具体如下:博客根目录 themes\next\source\css_custom这个文件下的custom.styl文件中修改如下：<img src="http://wx3.sinaimg.cn/mw690/007bXaCZgy1fswmao1amhj30ql0aydhg.jpg" alt="图">。</p></blockquote><h2 id="嗯-其他坑还在踩，欢迎投稿。。"><a href="#嗯-其他坑还在踩，欢迎投稿。。" class="headerlink" title="嗯~其他坑还在踩，欢迎投稿。。"></a>嗯~其他坑还在踩，欢迎投稿。。</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;遇到的第一个坑&quot;&gt;&lt;a href=&quot;#遇到的第一个坑&quot; class=&quot;headerlink&quot; title=&quot;遇到的第一个坑&quot;&gt;&lt;/a&gt;遇到的第一个坑&lt;/h2&gt;&lt;h3 id=&quot;hexo不显示&quot;&gt;&lt;a href=&quot;#hexo不显示&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="-解决问题" scheme="http://hezhing.top/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
+    
+    
+      <category term="-问题" scheme="http://hezhing.top/tags/%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Happy Birthday</title>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezhing.top/"/>
-  <updated>2018-07-07T05:40:07.421Z</updated>
+  <updated>2018-07-30T08:11:38.393Z</updated>
   <id>http://hezhing.top/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习（一）：KNN算法的实现</title>
+    <link href="http://hezhing.top/2018/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://hezhing.top/2018/07/30/机器学习（一）：KNN算法的实现/</id>
+    <published>2018-07-30T07:45:44.000Z</published>
+    <updated>2018-07-30T08:11:38.393Z</updated>
+    
+    <content type="html"><![CDATA[<p>##描述<br><a href="https://baike.baidu.com/item/k%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/9512781?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p><p>##算法实现原理：</p><blockquote><p>1.计算已知类别数据集中的点与当前点之间的距离;  </p></blockquote><blockquote><p>2.按照距离递增次序排序；  </p></blockquote><blockquote><p>3.选取与当前点距离最小的k个点；  </p></blockquote><blockquote><p>4.确定前k个点所在类别的出现频率； </p></blockquote><blockquote><p>5.返回前k个点所出现频率最高的类别作为当前点的预测分类。<br><a id="more"></a></p></blockquote><p>##算法实现：  </p><p>###数据集的建立及python代码的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">from numpy import *</span><br><span class="line">import operator</span><br><span class="line"></span><br><span class="line">#训练集</span><br><span class="line">def creatDataSet():</span><br><span class="line">    group = array([[1.0,1.1],[1.0,1.0],[0,0],[0,0.1]])</span><br><span class="line">    labels = [&apos;A&apos;,&apos;A&apos;,&apos;B&apos;,&apos;B&apos;]</span><br><span class="line">    return group, labels</span><br></pre></td></tr></table></figure></p><p>####运行结果：</p><blockquote><p>如下图：<br><img src="http://wx4.sinaimg.cn/mw690/007bXaCZgy1ftrycmz6mej30c205m0sp.jpg" alt="训练集运行结果"></p></blockquote><p>###KNN算法的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#KNN分类</span><br><span class="line"># inX 用于分类的数据（即测试集）</span><br><span class="line"># dataSet 用于训练的数据（即测试集）</span><br><span class="line"># labels 分类的标签</span><br><span class="line"># k KNN算法中 K 的值</span><br><span class="line">def classify(inX,dataSet,labels,k):</span><br><span class="line"></span><br><span class="line">    #计算距离</span><br><span class="line"></span><br><span class="line">    dataSetSize = dataSet.shape[0] #返回dataSet的行数</span><br><span class="line">    diffMat = np.tile(inX, (dataSetSize,1)) - dataSet #inX 在（行向量方向上重复，列向量方向上重复）次数</span><br><span class="line">    sqDiffMat = diffMat**2 #二维特征相减后平方</span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=1) #相减平方再相加</span><br><span class="line">    distances = sqDistances**0.5 #再开方</span><br><span class="line"></span><br><span class="line">    #排序（从小到大）</span><br><span class="line">    sortedDistIndices = distances.argsort() #排序并返回下标</span><br><span class="line"></span><br><span class="line">    classCount = &#123;&#125; #定义一个记录类别次数的字典</span><br><span class="line"></span><br><span class="line">    for i in range(k):</span><br><span class="line">        voteIlabel = labels[sortedDistIndices[i]] #取出前K个元素的类别</span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 #计算类别的次数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># key=operator.itemgetter(1)根据字典的值进行排序</span><br><span class="line"># key=operator.itemgetter(0)根据字典的键进行排序</span><br><span class="line"># reverse降序排序字典</span><br><span class="line"></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(1),reverse=True) # 降序排序</span><br><span class="line">    return sortedClassCount[0][0]</span><br></pre></td></tr></table></figure></p><p>####测试结果：<br><img src="http://wx3.sinaimg.cn/mw690/007bXaCZgy1ftryb8ssjmj30bt03uwea.jpg" alt="测试结果"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##描述&lt;br&gt;&lt;a href=&quot;https://baike.baidu.com/item/k%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/9512781?fr=aladdin&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;百度百科&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##算法实现原理：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.计算已知类别数据集中的点与当前点之间的距离;  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2.按照距离递增次序排序；  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3.选取与当前点距离最小的k个点；  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;4.确定前k个点所在类别的出现频率； &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;5.返回前k个点所出现频率最高的类别作为当前点的预测分类。&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://hezhing.top/categories/python/"/>
+    
+    
+      <category term="机器学习" scheme="http://hezhing.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>Counterfeit Dollar(枚举)</title>

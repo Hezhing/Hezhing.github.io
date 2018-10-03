@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[（一）环境配置]]></title>
+    <url>%2F2018%2F10%2F03%2F%EF%BC%88%E4%B8%80%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F%EF%BC%88%E4%B8%80%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[歌单推荐]]></title>
     <url>%2F2018%2F10%2F03%2F%E6%AD%8C%E5%8D%95%E6%8E%A8%E8%8D%90%2F%E6%AD%8C%E5%8D%95%E6%8E%A8%E8%8D%90%2F</url>
-    <content type="text"><![CDATA[[20181003]歌名歌手推荐理由生命中的时光 链接 齐一 齐一不便多说，第一次听到他的声音，是那首《这个年纪》，苍翠有力，活泼俏皮，当时没少单曲循环。今日首推这首歌，作词作曲皆为上品，“想要把自己活成一场梦，一首歌一部电影。”已经折服了我。少不了励志词语，每天醒来的时候照照镜子，用一个微笑补偿自己。让人不禁感叹，生命中那些难熬的时光，终将会在某一天找到所有孤独的意义。 [20181004]歌名歌手推荐理由这个年纪 链接 齐一 这是我听的齐一的第一首歌，当时我是高三，正值年少，资历尚且，无法听出歌中的无助和难以为继。齐一当时年过三十，缺乏了我这个年纪的冲动，多了一丝成熟稳重，从他口中唱出的词多了一丝岁月的韵味。如今再回首，没了一些东西，又有了一些东西。当我年过三十再回首，可能，这就是生活吧。]]></content>
+    <content type="text"><![CDATA[[20181003]歌名歌手推荐理由优美歌词摘抄生命中的时光 链接 齐一 齐一不便多说，第一次听到他的声音，是那首《这个年纪》，苍翠有力，活泼俏皮，当时没少单曲循环。今日首推这首歌，作词作曲皆为上品，“想要把自己活成一场梦，一首歌一部电影。”已经折服了我。少不了励志词语，每天醒来的时候照照镜子，用一个微笑补偿自己。让人不禁感叹，生命中那些难熬的时光，终将会在某一天找到所有孤独的意义。 在只有凌晨才不会太拥挤的城市我披星戴月独自穿行想要把自己活成一场梦一首歌一部电影就算会半梦半醒就算压（押）不上韵却还是期待所有故事结局我会在每天醒来的时候照照镜子用一个微笑补偿自己生活太不容易却仍不甘心问问自己是否拼尽全力我也佩服我的勇气也心疼所有孤独的意义 [20181004]歌名歌手推荐理由这个年纪 链接 齐一 这是我听的齐一的第一首歌，当时我是高三，正值年少，资历尚且，无法听出歌中的无助和难以为继。齐一当时年过三十，缺乏了我这个年纪的冲动，多了一丝成熟稳重，从他口中唱出的词多了一丝岁月的韵味。如今再回首，没了一些东西，又有了一些东西。当我年过三十再回首，可能，这就是生活吧。]]></content>
       <categories>
         <category>歌单</category>
       </categories>
@@ -79,7 +84,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F06%2F21%2Fhello-world%2F</url>
+    <url>%2F2018%2F06%2F21%2F%E5%85%B6%E4%BB%96%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>

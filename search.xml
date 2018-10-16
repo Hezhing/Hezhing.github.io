@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[实验室项目]]></title>
+    <url>%2F2018%2F10%2F16%2F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE%2FDjango%2F</url>
+    <content type="text"><![CDATA[#Django项目的创建和运行。 ##cmd运行命令 ###创建项目 （1）创建项目命令：django-admin startproject + 项目名称创建的文件的目录：目录介绍：（1） init .py :说明test1是一个Python包（2）setting.py :项目的配置文件（3）urls.py :进行url路由的配置（4）wsgi.py :web服务器和django交互的入口（5） manage.py :项目管理文件、 ###创建应用 （2）创建应用命令：python manage.py startapp +应用名称 注：需要在项目目录下创建，否则不生效。应用创建目录：目录介绍：（1） init .py :说明目录是一个Python模块（2）models.py :写和数据库相关内容（3）views.py :视图函数（4）test.py :写测试代码的文件（5）admin.py :网站后台管理相关文件 ###链接应用 打开setting.py文件，在INSTALLAPP下添加应用名称。 ###运行项目 直接在cmd中输入命令：python manage.py runserver 然后访问：http://localhost:8000/]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>实验室项目开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu16.04 iso文件下载及虚拟机安装]]></title>
+    <url>%2F2018%2F10%2F15%2F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2FUbuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%2FUbuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[#下载下载地址 点击如下下载32位或者64位iso文件，这里我下载的是64位桌面版的]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[（一）环境配置]]></title>
-    <url>%2F2018%2F10%2F03%2F%EF%BC%88%E4%B8%80%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F%EF%BC%88%E4%B8%80%EF%BC%89%E6%B8%97%E9%80%8F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
+    <url>%2F2018%2F10%2F03%2F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F%EF%BC%88%E4%B8%80%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"></content>
       <categories>
         <category>信息安全</category>

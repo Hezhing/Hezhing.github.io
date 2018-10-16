@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezhing.top/"/>
-  <updated>2018-10-16T12:40:11.804Z</updated>
+  <updated>2018-10-16T12:43:58.377Z</updated>
   <id>http://hezhing.top/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="http://hezhing.top/2018/10/16/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE/Django/"/>
     <id>http://hezhing.top/2018/10/16/实验室项目/Django/</id>
     <published>2018-10-16T11:56:18.000Z</published>
-    <updated>2018-10-16T12:40:11.804Z</updated>
+    <updated>2018-10-16T12:43:58.377Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Django项目的创建和运行。"><a href="#Django项目的创建和运行。" class="headerlink" title="Django项目的创建和运行。"></a>Django项目的创建和运行。</h1><h2 id="cmd运行命令"><a href="#cmd运行命令" class="headerlink" title="cmd运行命令"></a>cmd运行命令</h2><a id="more"></a><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><blockquote><p>（1）创建项目命令：django-admin startproject + 项目名称<br>创建的文件的目录：<img src="http://wx1.sinaimg.cn/mw690/006GMOXhgy1fwac21vcfsj306w03sgli.jpg" alt="目录图片"><br>目录介绍：<br>（1）<strong> init </strong>.py :说明test1是一个Python包<br>（2）setting.py :项目的配置文件<br>（3）urls.py :进行url路由的配置<br>（4）wsgi.py :web服务器和django交互的入口<br>（5） manage.py :项目管理文件、</p></blockquote><h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><blockquote><p>（2）创建应用命令：python manage.py startapp +应用名称  注：需要在项目目录下创建，否则不生效。<br>应用创建目录：<img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwac229zkhj306v05ydfs.jpg" alt="目录图片"><br>目录介绍：<br>（1）<strong> init </strong>.py :说明目录是一个Python模块<br>（2）models.py :写和数据库相关内容<br>（3）views.py :视图函数<br>（4）test.py :写测试代码的文件<br>（5）admin.py :网站后台管理相关文件</p></blockquote><h3 id="链接应用"><a href="#链接应用" class="headerlink" title="链接应用"></a>链接应用</h3><blockquote><p>打开setting.py文件，在INSTALLAPP下添加应用名称。<img src="http://wx3.sinaimg.cn/mw690/006GMOXhgy1fwac22s6mfj30l90kawg7.jpg" alt="图片"></p></blockquote><h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><blockquote><p>直接在cmd中输入命令：python manage.py runserver  然后访问：<a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<!-- tab 项目创建 --><div class="note default"><h1 id="Django项目的创建和运行。"><a href="#Django项目的创建和运行。" class="headerlink" title="Django项目的创建和运行。"></a>Django项目的创建和运行。</h1><h2 id="cmd运行命令"><a href="#cmd运行命令" class="headerlink" title="cmd运行命令"></a>cmd运行命令</h2><a id="more"></a><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><blockquote><p>（1）创建项目命令：django-admin startproject + 项目名称<br>创建的文件的目录：<img src="http://wx1.sinaimg.cn/mw690/006GMOXhgy1fwac21vcfsj306w03sgli.jpg" alt="目录图片"><br>目录介绍：<br>（1）<strong> init </strong>.py :说明test1是一个Python包<br>（2）setting.py :项目的配置文件<br>（3）urls.py :进行url路由的配置<br>（4）wsgi.py :web服务器和django交互的入口<br>（5） manage.py :项目管理文件、</p></blockquote><h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><blockquote><p>（2）创建应用命令：python manage.py startapp +应用名称  注：需要在项目目录下创建，否则不生效。<br>应用创建目录：<img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwac229zkhj306v05ydfs.jpg" alt="目录图片"><br>目录介绍：<br>（1）<strong> init </strong>.py :说明目录是一个Python模块<br>（2）models.py :写和数据库相关内容<br>（3）views.py :视图函数<br>（4）test.py :写测试代码的文件<br>（5）admin.py :网站后台管理相关文件</p></blockquote><h3 id="链接应用"><a href="#链接应用" class="headerlink" title="链接应用"></a>链接应用</h3><blockquote><p>打开setting.py文件，在INSTALLAPP下添加应用名称。<img src="http://wx3.sinaimg.cn/mw690/006GMOXhgy1fwac22s6mfj30l90kawg7.jpg" alt="图片"></p></blockquote><h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><blockquote><p>直接在cmd中输入命令：python manage.py runserver  然后访问：<a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a></p></blockquote></div><!-- endtab -->]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Django项目的创建和运行。&quot;&gt;&lt;a href=&quot;#Django项目的创建和运行。&quot; class=&quot;headerlink&quot; title=&quot;Django项目的创建和运行。&quot;&gt;&lt;/a&gt;Django项目的创建和运行。&lt;/h1&gt;&lt;h2 id=&quot;cmd运行命令&quot;&gt;&lt;a href=&quot;#cmd运行命令&quot; class=&quot;headerlink&quot; title=&quot;cmd运行命令&quot;&gt;&lt;/a&gt;cmd运行命令&lt;/h2&gt;
+      &lt;!-- tab 项目创建 --&gt;
+&lt;div class=&quot;note default&quot;&gt;&lt;h1 id=&quot;Django项目的创建和运行。&quot;&gt;&lt;a href=&quot;#Django项目的创建和运行。&quot; class=&quot;headerlink&quot; title=&quot;Django项目的创建和运行。&quot;&gt;&lt;/a&gt;Django项目的创建和运行。&lt;/h1&gt;&lt;h2 id=&quot;cmd运行命令&quot;&gt;&lt;a href=&quot;#cmd运行命令&quot; class=&quot;headerlink&quot; title=&quot;cmd运行命令&quot;&gt;&lt;/a&gt;cmd运行命令&lt;/h2&gt;&lt;/div&gt;
     
     </summary>
     

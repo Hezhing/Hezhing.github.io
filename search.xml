@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[基于Python Django框架的文档查找系统]]></title>
     <url>%2F2018%2F10%2F16%2F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE%2FDjango%2F</url>
-    <content type="text"><![CDATA[Django项目的创建和运行。cmd运行命令 创建项目 （1）创建项目命令：django-admin startproject + 项目名称创建的文件的目录：目录介绍：（1） init .py :说明test1是一个Python包（2）setting.py :项目的配置文件（3）urls.py :进行url路由的配置（4）wsgi.py :web服务器和django交互的入口（5） manage.py :项目管理文件、 创建应用 （2）创建应用命令：python manage.py startapp +应用名称 注：需要在项目目录下创建，否则不生效。应用创建目录：目录介绍：（1） init .py :说明目录是一个Python模块（2）models.py :写和数据库相关内容（3）views.py :视图函数（4）test.py :写测试代码的文件（5）admin.py :网站后台管理相关文件 链接应用 打开setting.py文件，在INSTALLAPP下添加应用名称。 运行项目 直接在cmd中输入命令：python manage.py runserver 然后访问：http://localhost:8000/]]></content>
+    <content type="text"><![CDATA[Django项目的创建和运行。cmd运行命令 创建项目 （1）创建项目命令：django-admin startproject + 项目名称创建的文件的目录：目录介绍：（1） init .py :说明test1是一个Python包（2）setting.py :项目的配置文件（3）urls.py :进行url路由的配置（4）wsgi.py :web服务器和django交互的入口（5） manage.py :项目管理文件、 创建应用 （2）创建应用命令：python manage.py startapp +应用名称 注：需要在项目目录下创建，否则不生效。应用创建目录：目录介绍：（1） init .py :说明目录是一个Python模块（2）models.py :写和数据库相关内容（3）views.py :视图函数（4）test.py :写测试代码的文件（5）admin.py :网站后台管理相关文件 链接应用 打开setting.py文件，在INSTALLAPP下添加应用名称。 运行项目 直接在cmd中输入命令：python manage.py runserver 然后访问：http://localhost:8000/ #]]></content>
       <categories>
         <category>实验室项目开发</category>
       </categories>

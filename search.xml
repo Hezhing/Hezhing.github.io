@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[Ubuntu16.04 iso文件下载及虚拟机安装]]></title>
-    <url>%2F2018%2F10%2F15%2F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2FUbuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%2FUbuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%2F</url>
+    <url>%2F2018%2F10%2F15%2F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2FUbuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[#下载下载地址 点击如下下载32位或者64位iso文件，这里我下载的是64位桌面版的然后打开VMware Workstation进行安装操作，具体参照下面图片 首先新建然后典型，下一步。选择下载的iso文件.后面按部就班操作就行。]]></content>
   </entry>
   <entry>

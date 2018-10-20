@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python安装mysqlclinent报错及解决]]></title>
+    <url>%2F2018%2F10%2F21%2F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2FPython%E5%AE%89%E8%A3%85mysqlclinent%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[遇见的问题 学习Django的时候需要使用数据库，在安装的过程中出现报错。 问题 报错：_mysql.c(42) : fatal error C1083: Cannot open include file: ‘config-win.h’: No such file or directory 问题一解决： 参考我的上一篇文章，Windows下安装Scrapy框架遇到的问题不过现在不是下载Twisted，而是下载mysqlclient，下载版本依电脑配置而定。安装如下：]]></content>
+      <categories>
+        <category>-解决问题</category>
+      </categories>
+      <tags>
+        <tag>-python包安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[基于Python Django框架的文档查找系统]]></title>
     <url>%2F2018%2F10%2F16%2F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE%2FDjango%2F</url>
     <content type="text"><![CDATA[Django项目的创建和运行。cmd运行命令 创建项目 （1）创建项目命令：django-admin startproject + 项目名称创建的文件的目录：目录介绍：（1） init .py :说明test1是一个Python包（2）setting.py :项目的配置文件（3）urls.py :进行url路由的配置（4）wsgi.py :web服务器和django交互的入口（5） manage.py :项目管理文件、 创建应用 （2）创建应用命令：python manage.py startapp +应用名称 注：需要在项目目录下创建，否则不生效。应用创建目录：目录介绍：（1） init .py :说明目录是一个Python模块（2）models.py :写和数据库相关内容（3）views.py :视图函数（4）test.py :写测试代码的文件（5）admin.py :网站后台管理相关文件 链接应用 打开setting.py文件，在INSTALLAPP下添加应用名称。 运行项目 直接在cmd中输入命令：python manage.py runserver 然后访问：http://localhost:8000/ #]]></content>
@@ -28,17 +39,6 @@
       </categories>
       <tags>
         <tag>信息安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Python安装mysqlclinent报错及解决]]></title>
-    <url>%2F2018%2F10%2F03%2F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2FPython%E5%AE%89%E8%A3%85mysqlclinent%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%2F</url>
-    <content type="text"><![CDATA[遇见的问题 学习Django的时候需要使用数据库，在安装的过程中出现报错。 问题 报错：_mysql.c(42) : fatal error C1083: Cannot open include file: ‘config-win.h’: No such file or directory 问题一解决： 参考我的上一篇文章，Windows下安装Scrapy框架遇到的问题不过现在不是下载Twisted，而是下载mysqlclient，下载版本依电脑配置而定。安装如下：]]></content>
-      <categories>
-        <category>-解决问题</category>
-      </categories>
-      <tags>
-        <tag>-python包安装</tag>
       </tags>
   </entry>
   <entry>

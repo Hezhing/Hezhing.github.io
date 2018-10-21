@@ -93,9 +93,9 @@
     <link href="http://hezhing.top/2018/10/15/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/"/>
     <id>http://hezhing.top/2018/10/15/环境配置/Ubuntu16-04-iso文件下载及虚拟机安装/</id>
     <published>2018-10-15T14:18:03.000Z</published>
-    <updated>2018-10-20T16:03:27.837Z</updated>
+    <updated>2018-10-21T08:04:01.421Z</updated>
     
-    <content type="html"><![CDATA[<p>#下载<br><a href="http://mirror.pnl.gov/releases/xenial/" target="_blank" rel="noopener">下载地址</a><br><a id="more"></a></p><blockquote><p>点击如下下载32位或者64位iso文件，这里我下载的是64位桌面版的<br><img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fw9a11o3jrj31100lxwhb.jpg" alt="图片如下"><br>然后打开VMware Workstation进行安装操作，具体参照下面图片</p></blockquote><blockquote><p>首先新建<img src="http://wx1.sinaimg.cn/mw690/006GMOXhgy1fwacdrl1gzj30be09ujrz.jpg" alt="新建"><br>然后典型，下一步。<img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwacdr5zcaj30fu0f6wfn.jpg" alt="下一步"><br>选择下载的iso文件.<img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwacds13o2j30fu0f6js0.jpg" alt="选择文件"><br>后面按部就班操作就行。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>#下载<br><a href="http://mirror.pnl.gov/releases/xenial/" target="_blank" rel="noopener">下载地址</a><br><a id="more"></a></p><blockquote><p>点击如下下载32位或者64位iso文件，这里我下载的是64位桌面版的<br><img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fw9a11o3jrj31100lxwhb.jpg" alt="图片如下"><br>然后打开VMware Workstation进行安装操作，具体参照下面图片</p></blockquote><blockquote><p>首先新建<img src="http://wx1.sinaimg.cn/mw690/006GMOXhgy1fwacdrl1gzj30be09ujrz.jpg" alt="新建"><br>然后典型，下一步。<br><img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwacdr5zcaj30fu0f6wfn.jpg" alt="下一步"><br>选择下载的iso文件.<br><img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwacds13o2j30fu0f6js0.jpg" alt="选择文件"><br>后面按部就班操作就行。</p></blockquote>]]></content>
     
     <summary type="html">
     

@@ -43,6 +43,30 @@
   </entry>
   
   <entry>
+    <title>日常报错</title>
+    <link href="http://hezhing.top/2018/10/21/%E6%97%A5%E5%B8%B8%E6%8A%A5%E9%94%99/%E6%97%A5%E5%B8%B8%E6%8A%A5%E9%94%99/"/>
+    <id>http://hezhing.top/2018/10/21/日常报错/日常报错/</id>
+    <published>2018-10-21T03:17:06.000Z</published>
+    <updated>2018-10-21T07:59:01.514Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><blockquote><p>在写Python的时候出现报错：<br>line = unicode(line,”utf-8”)<br>NameError: name ‘unicode’ is not defined</p></blockquote><a id="more"></a><p><img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwfwgwags6j30j8022gll.jpg" alt="报错"></p><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><blockquote><p>是Python2的代码在Python3中运行的错误， Python2 的unicode 函数在 Python3 中被命名为 str。在 Python3 中使用 str 来代替 Python2 中的 unicode.修改一下就ok了。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;遇到的问题&quot;&gt;&lt;a href=&quot;#遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;遇到的问题&quot;&gt;&lt;/a&gt;遇到的问题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;在写Python的时候出现报错：&lt;br&gt;line = unicode(line,”utf-8”)&lt;br&gt;NameError: name ‘unicode’ is not defined&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="解决问题" scheme="http://hezhing.top/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
+    
+    
+      <category term="问题" scheme="http://hezhing.top/tags/%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于Python Django框架的文档查找系统</title>
     <link href="http://hezhing.top/2018/10/16/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE/Django/"/>
     <id>http://hezhing.top/2018/10/16/实验室项目/Django/</id>
@@ -201,8 +225,8 @@
   
   <entry>
     <title>机器学习（一）：KNN算法的实现</title>
-    <link href="http://hezhing.top/2018/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://hezhing.top/2018/07/30/机器学习（一）：KNN算法的实现/机器学习（一）：KNN算法的实现/</id>
+    <link href="http://hezhing.top/2018/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://hezhing.top/2018/07/30/机器学习/机器学习（一）：KNN算法的实现/</id>
     <published>2018-07-30T07:45:44.000Z</published>
     <updated>2018-10-03T12:00:29.383Z</updated>
     

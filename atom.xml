@@ -5,9 +5,9 @@
   <subtitle>越努力，越幸运。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://hezhing.top/"/>
-  <updated>2018-10-20T16:08:25.396Z</updated>
-  <id>http://hezhing.top/</id>
+  <link href="http://zhihening.me/"/>
+  <updated>2018-10-03T12:59:26.584Z</updated>
+  <id>http://zhihening.me/</id>
   
   <author>
     <name>Hezhing</name>
@@ -17,13 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://zhihening.me/2019/08/06/hello-world/"/>
+    <id>http://zhihening.me/2019/08/06/hello-world/</id>
+    <published>2019-08-06T09:05:02.868Z</published>
+    <updated>2018-10-03T12:59:26.584Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Python安装mysqlclinent报错及解决</title>
-    <link href="http://hezhing.top/2018/10/21/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Python%E5%AE%89%E8%A3%85mysqlclinent%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3/"/>
-    <id>http://hezhing.top/2018/10/21/环境配置/Python安装mysqlclinent报错及解决/</id>
+    <link href="http://zhihening.me/2018/10/21/Python%E5%AE%89%E8%A3%85mysqlclinent%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3/"/>
+    <id>http://zhihening.me/2018/10/21/Python安装mysqlclinent报错及解决/</id>
     <published>2018-10-21T15:52:59.000Z</published>
     <updated>2018-10-20T16:08:25.396Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="遇见的问题"><a href="#遇见的问题" class="headerlink" title="遇见的问题"></a>遇见的问题</h2><blockquote><p>学习Django的时候需要使用数据库，在安装的过程中出现报错。</p></blockquote><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><blockquote><p>报错：_mysql.c(42) : fatal error C1083: Cannot open include file: ‘config-win.h’: No such file or directory<br><a id="more"></a><br><img src="http://wx2.sinaimg.cn/mw690/006GMOXhgy1fwci4js1q2j30xz0hrn05.jpg" alt="图片"></p></blockquote><h3 id="问题一解决："><a href="#问题一解决：" class="headerlink" title="问题一解决："></a>问题一解决：</h3><blockquote><p>参考我的上一篇文章，<a href="http://hezhing.top/2018/08/28/Scrapy%E7%88%AC%E8%99%AB/Windows%E4%B8%8B%E5%AE%89%E8%A3%85Scrapy%E6%A1%86%E6%9E%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">Windows下安装Scrapy框架遇到的问题</a><br>不过现在不是下载Twisted，而是下载mysqlclient，下载版本依电脑配置而定。安装如下：<img src="http://wx1.sinaimg.cn/mw690/006GMOXhgy1fwf02cjl9ej30xz0hrmz8.jpg" alt="安装"></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="遇见的问题"><a href="#遇见的问题" class="headerlink" title="遇见的问题"></a>遇见的问题</h2><blockquote><p>学习Django的时候需要使用数据库，在安装的过程中出现报错。</p></blockquote><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><blockquote><p>报错：_mysql.c(42) : fatal error C1083: Cannot open include file: ‘config-win.h’: No such file or directory<br><a id="more"></a><br><img src="http://wx2.sinaimg.cn/mw690/006GMOXhgy1fwci4js1q2j30xz0hrn05.jpg" alt="图片"></p></blockquote><h3 id="问题一解决："><a href="#问题一解决：" class="headerlink" title="问题一解决："></a>问题一解决：</h3><blockquote><p>参考我的上一篇文章，<a href="http://hezhing.top/2018/08/28/Scrapy%E7%88%AC%E8%99%AB/Windows%E4%B8%8B%E5%AE%89%E8%A3%85Scrapy%E6%A1%86%E6%9E%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">Windows下安装Scrapy框架遇到的问题</a><br>不过现在不是下载Twisted，而是下载mysqlclient，下载版本依电脑配置而定。安装如下：<img src="http://wx1.sinaimg.cn/mw690/006GMOXhgy1fwf02cjl9ej30xz0hrmz8.jpg" alt="安装"></p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -31,45 +49,21 @@
 &lt;p&gt;学习Django的时候需要使用数据库，在安装的过程中出现报错。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;报错：_mysql.c(42) : fatal error C1083: Cannot open include file: ‘config-win.h’: No such file or directory&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;报错：_mysql.c(42) : fatal error C1083: Cannot open include file: ‘config-win.h’: No such file or directory&lt;br&gt;
     
     </summary>
     
-      <category term="-解决问题" scheme="http://hezhing.top/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
+      <category term="-解决问题" scheme="http://zhihening.me/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
     
     
-      <category term="-python包安装" scheme="http://hezhing.top/tags/python%E5%8C%85%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>日常报错</title>
-    <link href="http://hezhing.top/2018/10/21/%E6%97%A5%E5%B8%B8%E6%8A%A5%E9%94%99/%E6%97%A5%E5%B8%B8%E6%8A%A5%E9%94%99/"/>
-    <id>http://hezhing.top/2018/10/21/日常报错/日常报错/</id>
-    <published>2018-10-21T03:17:06.000Z</published>
-    <updated>2018-10-21T07:59:01.514Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><blockquote><p>在写Python的时候出现报错：<br>line = unicode(line,”utf-8”)<br>NameError: name ‘unicode’ is not defined</p></blockquote><a id="more"></a><p><img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwfwgwags6j30j8022gll.jpg" alt="报错"></p><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><blockquote><p>是Python2的代码在Python3中运行的错误， Python2 的unicode 函数在 Python3 中被命名为 str。在 Python3 中使用 str 来代替 Python2 中的 unicode.修改一下就ok了。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;遇到的问题&quot;&gt;&lt;a href=&quot;#遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;遇到的问题&quot;&gt;&lt;/a&gt;遇到的问题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;在写Python的时候出现报错：&lt;br&gt;line = unicode(line,”utf-8”)&lt;br&gt;NameError: name ‘unicode’ is not defined&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="解决问题" scheme="http://hezhing.top/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
-    
-    
-      <category term="问题" scheme="http://hezhing.top/tags/%E9%97%AE%E9%A2%98/"/>
+      <category term="-python包安装" scheme="http://zhihening.me/tags/python%E5%8C%85%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
   <entry>
     <title>基于Python Django框架的文档查找系统</title>
-    <link href="http://hezhing.top/2018/10/16/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE/Django/"/>
-    <id>http://hezhing.top/2018/10/16/实验室项目/Django/</id>
+    <link href="http://zhihening.me/2018/10/16/Django/"/>
+    <id>http://zhihening.me/2018/10/16/Django/</id>
     <published>2018-10-16T11:56:18.000Z</published>
     <updated>2018-10-20T16:03:11.834Z</updated>
     
@@ -81,17 +75,17 @@
     
     </summary>
     
-      <category term="实验室项目开发" scheme="http://hezhing.top/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/"/>
+      <category term="实验室项目开发" scheme="http://zhihening.me/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Django" scheme="http://hezhing.top/tags/Django/"/>
+      <category term="Django" scheme="http://zhihening.me/tags/Django/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu16.04 iso文件下载及虚拟机安装</title>
-    <link href="http://hezhing.top/2018/10/15/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/"/>
-    <id>http://hezhing.top/2018/10/15/环境配置/Ubuntu16-04-iso文件下载及虚拟机安装/</id>
+    <link href="http://zhihening.me/2018/10/15/Ubuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/"/>
+    <id>http://zhihening.me/2018/10/15/Ubuntu16-04-iso文件下载及虚拟机安装/</id>
     <published>2018-10-15T14:18:03.000Z</published>
     <updated>2018-10-21T08:04:01.421Z</updated>
     
@@ -99,19 +93,19 @@
     
     <summary type="html">
     
-      &lt;p&gt;#下载&lt;br&gt;&lt;a href=&quot;http://mirror.pnl.gov/releases/xenial/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;下载地址&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;#下载&lt;br&gt;&lt;a href=&quot;http://mirror.pnl.gov/releases/xenial/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;下载地址&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
     
-      <category term="软件安装" scheme="http://hezhing.top/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="http://zhihening.me/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
   <entry>
     <title>（一）环境配置</title>
-    <link href="http://hezhing.top/2018/10/03/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%EF%BC%88%E4%B8%80%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    <id>http://hezhing.top/2018/10/03/环境配置/（一）环境配置/</id>
+    <link href="http://zhihening.me/2018/10/03/%EF%BC%88%E4%B8%80%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>http://zhihening.me/2018/10/03/（一）环境配置/</id>
     <published>2018-10-03T12:52:59.000Z</published>
     <updated>2018-10-14T14:13:36.506Z</updated>
     
@@ -119,17 +113,17 @@
     
     </summary>
     
-      <category term="信息安全" scheme="http://hezhing.top/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+      <category term="信息安全" scheme="http://zhihening.me/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
     
     
-      <category term="信息安全" scheme="http://hezhing.top/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+      <category term="信息安全" scheme="http://zhihening.me/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>歌单推荐</title>
-    <link href="http://hezhing.top/2018/10/03/%E6%AD%8C%E5%8D%95%E6%8E%A8%E8%8D%90/%E6%AD%8C%E5%8D%95%E6%8E%A8%E8%8D%90/"/>
-    <id>http://hezhing.top/2018/10/03/歌单推荐/歌单推荐/</id>
+    <link href="http://zhihening.me/2018/10/03/%E6%AD%8C%E5%8D%95%E6%8E%A8%E8%8D%90/"/>
+    <id>http://zhihening.me/2018/10/03/歌单推荐/</id>
     <published>2018-10-03T12:00:06.000Z</published>
     <updated>2018-10-20T15:46:03.786Z</updated>
     
@@ -152,17 +146,17 @@
     
     </summary>
     
-      <category term="歌单" scheme="http://hezhing.top/categories/%E6%AD%8C%E5%8D%95/"/>
+      <category term="歌单" scheme="http://zhihening.me/categories/%E6%AD%8C%E5%8D%95/"/>
     
     
-      <category term="歌单" scheme="http://hezhing.top/tags/%E6%AD%8C%E5%8D%95/"/>
+      <category term="歌单" scheme="http://zhihening.me/tags/%E6%AD%8C%E5%8D%95/"/>
     
   </entry>
   
   <entry>
     <title>Windows下安装Scrapy框架遇到的问题</title>
-    <link href="http://hezhing.top/2018/08/28/Scrapy%E7%88%AC%E8%99%AB/Windows%E4%B8%8B%E5%AE%89%E8%A3%85Scrapy%E6%A1%86%E6%9E%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://hezhing.top/2018/08/28/Scrapy爬虫/Windows下安装Scrapy框架遇到的问题/</id>
+    <link href="http://zhihening.me/2018/08/28/Windows%E4%B8%8B%E5%AE%89%E8%A3%85Scrapy%E6%A1%86%E6%9E%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://zhihening.me/2018/08/28/Windows下安装Scrapy框架遇到的问题/</id>
     <published>2018-08-28T14:53:39.000Z</published>
     <updated>2018-10-20T16:04:22.512Z</updated>
     
@@ -177,17 +171,17 @@
     
     </summary>
     
-      <category term="-解决问题" scheme="http://hezhing.top/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
+      <category term="-解决问题" scheme="http://zhihening.me/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
     
     
-      <category term="-问题" scheme="http://hezhing.top/tags/%E9%97%AE%E9%A2%98/"/>
+      <category term="-问题" scheme="http://zhihening.me/tags/%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>swust oj数据结构前40题中的20个python实现</title>
-    <link href="http://hezhing.top/2018/08/02/swust-oj%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%89%8D40%E9%A2%98%E4%B8%AD%E7%9A%8420%E4%B8%AApython%E5%AE%9E%E7%8E%B0/swust-oj%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%89%8D40%E9%A2%98%E4%B8%AD%E7%9A%8420%E4%B8%AApython%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://hezhing.top/2018/08/02/swust-oj数据结构前40题中的20个python实现/swust-oj数据结构前40题中的20个python实现/</id>
+    <link href="http://zhihening.me/2018/08/02/swust-oj%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%89%8D40%E9%A2%98%E4%B8%AD%E7%9A%8420%E4%B8%AApython%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://zhihening.me/2018/08/02/swust-oj数据结构前40题中的20个python实现/</id>
     <published>2018-08-02T12:52:32.000Z</published>
     <updated>2018-10-14T13:59:51.992Z</updated>
     
@@ -216,17 +210,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://hezhing.top/categories/python/"/>
+      <category term="python" scheme="http://zhihening.me/categories/python/"/>
     
     
-      <category term="题解~" scheme="http://hezhing.top/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解~" scheme="http://zhihening.me/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>机器学习（一）：KNN算法的实现</title>
-    <link href="http://hezhing.top/2018/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://hezhing.top/2018/07/30/机器学习/机器学习（一）：KNN算法的实现/</id>
+    <link href="http://zhihening.me/2018/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://zhihening.me/2018/07/30/机器学习（一）：KNN算法的实现/</id>
     <published>2018-07-30T07:45:44.000Z</published>
     <updated>2018-10-03T12:00:29.383Z</updated>
     
@@ -249,21 +243,21 @@
 &lt;p&gt;4.确定前k个点所在类别的出现频率； &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;5.返回前k个点所出现频率最高的类别作为当前点的预测分类。&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;5.返回前k个点所出现频率最高的类别作为当前点的预测分类。&lt;br&gt;
     
     </summary>
     
-      <category term="python" scheme="http://hezhing.top/categories/python/"/>
+      <category term="python" scheme="http://zhihening.me/categories/python/"/>
     
     
-      <category term="机器学习" scheme="http://hezhing.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="机器学习" scheme="http://zhihening.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>Counterfeit Dollar(枚举)</title>
-    <link href="http://hezhing.top/2018/07/07/%E7%AE%97%E6%B3%95%E5%81%9A%E9%A2%98/Counterfeit-Dollar-%E6%9E%9A%E4%B8%BE/"/>
-    <id>http://hezhing.top/2018/07/07/算法做题/Counterfeit-Dollar-枚举/</id>
+    <link href="http://zhihening.me/2018/07/07/Counterfeit-Dollar-%E6%9E%9A%E4%B8%BE/"/>
+    <id>http://zhihening.me/2018/07/07/Counterfeit-Dollar-枚举/</id>
     <published>2018-07-07T04:49:43.000Z</published>
     <updated>2018-10-03T12:01:29.500Z</updated>
     
@@ -273,21 +267,21 @@
     
       &lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://poj.org/problem?id=1013&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even though its color and size make it indistinguishable from the real silver dollars. The counterfeit coin has a different weight from the other coins but Sally does not know if it is heavier or lighter than the real coins.&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even though its color and size make it indistinguishable from the real silver dollars. The counterfeit coin has a different weight from the other coins but Sally does not know if it is heavier or lighter than the real coins.&lt;br&gt;
     
     </summary>
     
-      <category term="题解" scheme="http://hezhing.top/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://zhihening.me/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="枚举" scheme="http://hezhing.top/tags/%E6%9E%9A%E4%B8%BE/"/>
+      <category term="枚举" scheme="http://zhihening.me/tags/%E6%9E%9A%E4%B8%BE/"/>
     
   </entry>
   
   <entry>
     <title>在我搭建博客中所遇到的坑</title>
-    <link href="http://hezhing.top/2018/07/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%9C%A8%E6%88%91%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
-    <id>http://hezhing.top/2018/07/02/博客搭建/在我搭建博客中所遇到的坑/</id>
+    <link href="http://zhihening.me/2018/07/02/%E5%9C%A8%E6%88%91%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
+    <id>http://zhihening.me/2018/07/02/在我搭建博客中所遇到的坑/</id>
     <published>2018-07-02T03:22:12.000Z</published>
     <updated>2018-10-03T12:03:26.479Z</updated>
     
@@ -296,21 +290,21 @@
     <summary type="html">
     
       &lt;h2 id=&quot;遇到的第一个坑&quot;&gt;&lt;a href=&quot;#遇到的第一个坑&quot; class=&quot;headerlink&quot; title=&quot;遇到的第一个坑&quot;&gt;&lt;/a&gt;遇到的第一个坑&lt;/h2&gt;&lt;h3 id=&quot;hexo不显示&quot;&gt;&lt;a href=&quot;#hexo不显示&quot; class=&quot;headerlink&quot; title=&quot;hexo不显示&quot;&gt;&lt;/a&gt;hexo不显示&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;在安装hexo的过程中输入 hexo -v 查看hexo安装版本的时候，没有显示hexo的版本。&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;在安装hexo的过程中输入 hexo -v 查看hexo安装版本的时候，没有显示hexo的版本。&lt;br&gt;
     
     </summary>
     
-      <category term="-解决问题" scheme="http://hezhing.top/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
+      <category term="-解决问题" scheme="http://zhihening.me/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
     
     
-      <category term="-问题" scheme="http://hezhing.top/tags/%E9%97%AE%E9%A2%98/"/>
+      <category term="-问题" scheme="http://zhihening.me/tags/%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>Happy Birthday</title>
-    <link href="http://hezhing.top/2018/06/27/%E5%85%B6%E4%BB%96/Happy-Birthday/"/>
-    <id>http://hezhing.top/2018/06/27/其他/Happy-Birthday/</id>
+    <link href="http://zhihening.me/2018/06/27/Happy-Birthday/"/>
+    <id>http://zhihening.me/2018/06/27/Happy-Birthday/</id>
     <published>2018-06-27T05:35:59.000Z</published>
     <updated>2018-10-20T16:28:30.087Z</updated>
     
@@ -322,28 +316,10 @@
     
     </summary>
     
-      <category term="-杂记" scheme="http://hezhing.top/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="-杂记" scheme="http://zhihening.me/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="-生活" scheme="http://hezhing.top/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://hezhing.top/2018/06/21/%E5%85%B6%E4%BB%96/hello-world/"/>
-    <id>http://hezhing.top/2018/06/21/其他/hello-world/</id>
-    <published>2018-06-20T16:09:22.871Z</published>
-    <updated>2018-10-03T12:59:26.584Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
+      <category term="-生活" scheme="http://zhihening.me/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   

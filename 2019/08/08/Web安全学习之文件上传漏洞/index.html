@@ -104,7 +104,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Web安全," />
 
 
 
@@ -117,12 +117,13 @@
 
 
 
-<meta name="description" content="文件上传漏洞文件上传漏洞​1.用户上传一个可执行的脚本文件，获得了执行服务器端命令的能力，常见于File-Based的Web应用，PHP，ASP，JSP。 ​2. getshell最为常用、直接的方式 ​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。                         漏洞触发条件​1. 上传的文件被Web容器解释执行。 ​2. 用户能够从Web网">
+<meta name="description" content="文件上传漏洞文件上传漏洞​1.用户上传一个可执行的脚本文件，获得了执行服务器端命令的能力，常见于File-Based的Web应用，PHP，ASP，JSP。 ​2. getshell最为常用、直接的方式 ​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。">
+<meta name="keywords" content="Web安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hezhing&#39;s Blog">
+<meta property="og:title" content="Web安全学习之文件上传漏洞">
 <meta property="og:url" content="http://zhihening.me/2019/08/08/Web安全学习之文件上传漏洞/index.html">
 <meta property="og:site_name" content="Hezhing&#39;s Blog">
-<meta property="og:description" content="文件上传漏洞文件上传漏洞​1.用户上传一个可执行的脚本文件，获得了执行服务器端命令的能力，常见于File-Based的Web应用，PHP，ASP，JSP。 ​2. getshell最为常用、直接的方式 ​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。                         漏洞触发条件​1. 上传的文件被Web容器解释执行。 ​2. 用户能够从Web网">
+<meta property="og:description" content="文件上传漏洞文件上传漏洞​1.用户上传一个可执行的脚本文件，获得了执行服务器端命令的能力，常见于File-Based的Web应用，PHP，ASP，JSP。 ​2. getshell最为常用、直接的方式 ​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zhihening.me/images/1565252242151.png">
 <meta property="og:image" content="http://zhihening.me/images/1565261388477.png">
@@ -134,10 +135,10 @@
 <meta property="og:image" content="http://zhihening.me/images/1565262289506.png">
 <meta property="og:image" content="http://zhihening.me/images/1565262332257.png">
 <meta property="og:image" content="http://zhihening.me/images/1565262532588.png">
-<meta property="og:updated_time" content="2019-08-08T11:42:18.968Z">
+<meta property="og:updated_time" content="2019-08-08T11:47:25.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hezhing&#39;s Blog">
-<meta name="twitter:description" content="文件上传漏洞文件上传漏洞​1.用户上传一个可执行的脚本文件，获得了执行服务器端命令的能力，常见于File-Based的Web应用，PHP，ASP，JSP。 ​2. getshell最为常用、直接的方式 ​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。                         漏洞触发条件​1. 上传的文件被Web容器解释执行。 ​2. 用户能够从Web网">
+<meta name="twitter:title" content="Web安全学习之文件上传漏洞">
+<meta name="twitter:description" content="文件上传漏洞文件上传漏洞​1.用户上传一个可执行的脚本文件，获得了执行服务器端命令的能力，常见于File-Based的Web应用，PHP，ASP，JSP。 ​2. getshell最为常用、直接的方式 ​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。">
 <meta name="twitter:image" content="http://zhihening.me/images/1565252242151.png">
 
 
@@ -184,7 +185,7 @@
   daovoice('update');
   </script>
 
-  <title> | Hezhing's Blog</title>
+  <title>Web安全学习之文件上传漏洞 | Hezhing's Blog</title>
   
 
 
@@ -375,7 +376,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Web安全学习之文件上传漏洞</h1>
         
 
         <div class="post-meta">
@@ -384,7 +385,7 @@
 		 
 			<span class="post-updated">
 				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2019-08-08T19:42:18+08:00" content="2019-08-08">
+				<time itemprop="dateUpdated" datetime="2019-08-08T19:47:25+08:00" content="2019-08-08">
 					2019-08-08
 				</time>
 			</span>
@@ -410,6 +411,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -471,7 +494,8 @@
       
         <h1 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h1><h2 id="文件上传漏洞-1"><a href="#文件上传漏洞-1" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h2><p>​1.用户上传一个可执行的脚本文件，获得了执行服务器端命令的能力，常见于File-Based的Web应用，PHP，ASP，JSP。</p>
 <p>​2. getshell最为常用、直接的方式</p>
-<p>​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。                        </p>
+<p>​3. “文件上传”本身是一个正常的业务需求，问题在于如何安全上传。</p>
+<a id="more"></a>
 <h2 id="漏洞触发条件"><a href="#漏洞触发条件" class="headerlink" title="漏洞触发条件"></a>漏洞触发条件</h2><p>​1. 上传的文件被Web容器解释执行。</p>
 <p>​2. 用户能够从Web网页访问到被上传的文件（直接或者间接）</p>
 <p>​3.用户上传的文件通常不能被网站程序压缩、修改内容。</p>
@@ -639,6 +663,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Web安全/" rel="tag"><i class="fa fa-tag"></i> Web安全</a>
+          
+        </div>
+      
 
       
       
@@ -748,7 +778,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -759,7 +789,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

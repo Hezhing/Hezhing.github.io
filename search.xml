@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hello2019]]></title>
+    <url>%2F2019%2F08%2F06%2Fhello2019%2F</url>
+    <content type="text"><![CDATA[本网站自2018年6月23日运行以来，共计推送11篇文章，由于种种原因（主要是我太懒），一直未曾更新。但经过深刻反思，决定重新拾起博客，开始更新。欢迎各位大佬指正。]]></content>
+      <tags>
+        <tag>-life</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F08%2F06%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
@@ -33,17 +41,6 @@
     <content type="text"><![CDATA[#下载下载地址 点击如下下载32位或者64位iso文件，这里我下载的是64位桌面版的然后打开VMware Workstation进行安装操作，具体参照下面图片 首先新建然后典型，下一步。选择下载的iso文件.后面按部就班操作就行。]]></content>
       <tags>
         <tag>软件安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[（一）环境配置]]></title>
-    <url>%2F2018%2F10%2F03%2F%EF%BC%88%E4%B8%80%EF%BC%89%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>信息安全</category>
-      </categories>
-      <tags>
-        <tag>信息安全</tag>
       </tags>
   </entry>
   <entry>
@@ -120,7 +117,7 @@
         <category>-杂记</category>
       </categories>
       <tags>
-        <tag>-生活</tag>
+        <tag>-life</tag>
       </tags>
   </entry>
 </search>

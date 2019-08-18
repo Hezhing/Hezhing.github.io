@@ -125,15 +125,15 @@
 <meta property="og:site_name" content="Hezhing&#39;s Blog">
 <meta property="og:description" content="0.前情摘要这个暑假参加了XMan的夏令营，结果进了特训营，还要自己出题，不过队里两个大佬搞好了。。感觉没有自己什么事情（听课是不可能听课的。趁着空闲学学docker（要自己打包题）的基本命令。 1.基本配置环境：VMware Workstation Pro + Ubuntu 16.04目前最新docker分为 docker-ce和docker-ee两个版本，其中ce为社区版免费的，ee为商业版商">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="en-resource://database/518:1">
-<meta property="og:image" content="en-resource://database/520:1">
-<meta property="og:image" content="en-resource://database/522:1">
-<meta property="og:image" content="en-resource://database/524:1">
-<meta property="og:updated_time" content="2019-08-18T07:58:25.014Z">
+<meta property="og:image" content="http://zhihening.me/images/1566040954442.png">
+<meta property="og:image" content="http://zhihening.me/images/1566040975325.png">
+<meta property="og:image" content="http://zhihening.me/images/1566041657202.png">
+<meta property="og:image" content="http://zhihening.me/images/1566098263745.png">
+<meta property="og:updated_time" content="2019-08-18T08:04:06.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16.04安装Docker">
 <meta name="twitter:description" content="0.前情摘要这个暑假参加了XMan的夏令营，结果进了特训营，还要自己出题，不过队里两个大佬搞好了。。感觉没有自己什么事情（听课是不可能听课的。趁着空闲学学docker（要自己打包题）的基本命令。 1.基本配置环境：VMware Workstation Pro + Ubuntu 16.04目前最新docker分为 docker-ce和docker-ee两个版本，其中ce为社区版免费的，ee为商业版商">
-<meta name="twitter:image" content="en-resource://database/518:1">
+<meta name="twitter:image" content="http://zhihening.me/images/1566040954442.png">
 
 
 
@@ -379,7 +379,7 @@
 		 
 			<span class="post-updated">
 				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2019-08-18T15:58:25+08:00" content="2019-08-18">
+				<time itemprop="dateUpdated" datetime="2019-08-18T16:04:06+08:00" content="2019-08-18">
 					2019-08-18
 				</time>
 			</span>
@@ -466,19 +466,20 @@
       
         <h2 id="0-前情摘要"><a href="#0-前情摘要" class="headerlink" title="0.前情摘要"></a>0.前情摘要</h2><p>这个暑假参加了XMan的夏令营，结果进了特训营，还要自己出题，不过队里两个大佬搞好了。。感觉没有自己什么事情（听课是不可能听课的。趁着空闲学学docker（要自己打包题）的基本命令。</p>
 <h2 id="1-基本配置环境："><a href="#1-基本配置环境：" class="headerlink" title="1.基本配置环境："></a>1.基本配置环境：</h2><p>VMware Workstation Pro + Ubuntu 16.04目前最新docker分为 docker-ce和docker-ee两个版本，其中ce为社区版免费的，ee为商业版商用的，目前测试用ce版本。这里安装过程使用的是博客园中的过程，于2019.8.15日 亲测有效。</p>
+<a id="more"></a>
 <h2 id="2-安装过程"><a href="#2-安装过程" class="headerlink" title="2.安装过程"></a>2.安装过程</h2><h3 id="2-1-首次更新"><a href="#2-1-首次更新" class="headerlink" title="2.1 首次更新"></a>2.1 首次更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 <h3 id="2-2-安装linux-image-extra-包"><a href="#2-2-安装linux-image-extra-包" class="headerlink" title="2.2 安装linux-image-extra-* 包"></a>2.2 安装linux-image-extra-* 包</h3><p>这一步不可少，不然后面安装docker会从国外网址下载，会被墙， 就会安装不成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \     linux-image-extra-$(uname -r) \     linux-image-extra-virtual</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-3-安装https"><a href="#2-3-安装https" class="headerlink" title="2.3 安装https"></a>2.3 安装https</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \     apt-transport-https \     ca-certificates \     curl \     software-properties-common</span><br></pre></td></tr></table></figure>
 <h3 id="2-4-安装GPG-key"><a href="#2-4-安装GPG-key" class="headerlink" title="2.4 安装GPG key"></a>2.4 安装GPG key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
-<p><img src="en-resource://database/518:1" alt="2c1b3dec75d3451be4c6d8aaa6dca5b3.png"></p>
+<p><img src="/images/1566040954442.png" alt=""></p>
 <h3 id="2-5-验证-key的fingerprint"><a href="#2-5-验证-key的fingerprint" class="headerlink" title="2.5 验证 key的fingerprint"></a>2.5 验证 key的fingerprint</h3><p>验证可以的fingerprint是否为<br>9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key fingerprint 0EBFCD88  </span><br><span class="line"># 如果正确，输出结果如下：</span><br></pre></td></tr></table></figure></p>
-<p><img src="en-resource://database/520:1" alt="390557c652f220e6891e278bfedab3d4.png"></p>
+<p><img src="/images/1566040975325.png" alt=""></p>
 <h3 id="2-6-安装仓库"><a href="#2-6-安装仓库" class="headerlink" title="2.6 安装仓库"></a>2.6 安装仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository \    &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \    $(lsb_release -cs) \    stable&amp;quot;</span><br></pre></td></tr></table></figure>
 <h3 id="1-7-再次更新"><a href="#1-7-再次更新" class="headerlink" title="1.7 再次更新"></a>1.7 再次更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 <h3 id="1-8-安装docker-ce"><a href="#1-8-安装docker-ce" class="headerlink" title="1.8 安装docker-ce"></a>1.8 安装docker-ce</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce #如果下载过慢，则属于正常现象（国外源1.9 测试 #安装成功后的一波测试</span><br></pre></td></tr></table></figure>
-<p> <img src="en-resource://database/522:1" alt="1d5dc99828ccbbb42f2e9a18a8c71bb3.png"></p>
+<p><img src="/images/1566041657202.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
-<p>至此， docker在Ubuntu16.04上的安装算是完成了。注：若是出现以下报错：<br><img src="en-resource://database/524:1" alt="5157b3ca1ad451946ef52d19192c7c55.png"><br>则是没有加sudo权限。在命令前加sudo即可。</p>
+<p>至此， docker在Ubuntu16.04上的安装算是完成了。注：若是出现以下报错：<br><img src="/images/1566098263745.png" alt=""><br>则是没有加sudo权限。在命令前加sudo即可。</p>
 
       
     </div>

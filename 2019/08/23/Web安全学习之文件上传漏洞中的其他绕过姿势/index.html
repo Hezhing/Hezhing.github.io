@@ -117,18 +117,18 @@
 
 
 
-<meta name="description" content="前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。 1 .htaccess文件构造后门.htaccess是Apache HTPP Server的文件目录系统级别的配置文件的默认的名字，它提供了再主配置文件中定义用户自定义指令的支持。它可以实现：网页301重定向、">
+<meta name="description" content="前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。">
 <meta name="keywords" content="Web安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web安全之文件上传漏洞中的其他绕过姿势">
 <meta property="og:url" content="http://zhihening.me/2019/08/23/Web安全学习之文件上传漏洞中的其他绕过姿势/index.html">
 <meta property="og:site_name" content="Hezhing&#39;s Blog">
-<meta property="og:description" content="前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。 1 .htaccess文件构造后门.htaccess是Apache HTPP Server的文件目录系统级别的配置文件的默认的名字，它提供了再主配置文件中定义用户自定义指令的支持。它可以实现：网页301重定向、">
+<meta property="og:description" content="前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-02T13:07:40.391Z">
+<meta property="og:updated_time" content="2019-09-02T13:12:07.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web安全之文件上传漏洞中的其他绕过姿势">
-<meta name="twitter:description" content="前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。 1 .htaccess文件构造后门.htaccess是Apache HTPP Server的文件目录系统级别的配置文件的默认的名字，它提供了再主配置文件中定义用户自定义指令的支持。它可以实现：网页301重定向、">
+<meta name="twitter:description" content="前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。">
 
 
 
@@ -374,7 +374,7 @@
 		 
 			<span class="post-updated">
 				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2019-09-02T21:07:40+08:00" content="2019-09-02">
+				<time itemprop="dateUpdated" datetime="2019-09-02T21:12:07+08:00" content="2019-09-02">
 					2019-09-02
 				</time>
 			</span>
@@ -482,6 +482,7 @@
 
       
         <p>前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。</p>
+<a id="more"></a>
 <h2 id="1-htaccess文件构造后门"><a href="#1-htaccess文件构造后门" class="headerlink" title="1 .htaccess文件构造后门"></a>1 .htaccess文件构造后门</h2><p>.htaccess是<strong>Apache HTPP Server</strong>的文件目录系统级别的配置文件的默认的名字，它提供了再主配置文件中定义用户自定义指令的支持。它可以实现：网页301重定向、自定义404页面、改变文件扩展名、允许/阻止特定的用户或者目录的访问、jinzhi8目录列表、配置默认文档等功能。也就是我们可以通过这个文件达到更改Apache配置的目的。.htaccess的用途范围主要针对当前目录。</p>
 <h3 id="1-1开启-htaccess支持"><a href="#1-1开启-htaccess支持" class="headerlink" title="1.1开启.htaccess支持"></a>1.1开启.htaccess支持</h3><p>启用.htaccess，需要修改httpd.conf，启用AllowOverride，即将原有配置下的AllowOverride None 修改为 AllowOverride All。</p>
 <h3 id="1-2通过-htaccess文件来控制文件的访问权限"><a href="#1-2通过-htaccess文件来控制文件的访问权限" class="headerlink" title="1.2通过.htaccess文件来控制文件的访问权限"></a>1.2通过.htaccess文件来控制文件的访问权限</h3><p>我们在很多时候会遇到这样的情况，可以上传后门文件到服务器上，但是改上传目录不能禁止外部访问，或者是不解析脚本，但如果他开启了.htaccess的支持，我们就可以通过它来重写Apache配置（只对当前目录有效），然后执行我们的脚本文件。</p>

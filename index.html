@@ -551,7 +551,7 @@
 		 
 			<span class="post-updated">
 				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2019-09-02T21:07:40+08:00" content="2019-09-02">
+				<time itemprop="dateUpdated" datetime="2019-09-02T21:12:07+08:00" content="2019-09-02">
 					2019-09-02
 				</time>
 			</span>
@@ -659,56 +659,14 @@
 
       
         
-          
-            <p>前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。</p>
-<h2 id="1-htaccess文件构造后门"><a href="#1-htaccess文件构造后门" class="headerlink" title="1 .htaccess文件构造后门"></a>1 .htaccess文件构造后门</h2><p>.htaccess是<strong>Apache HTPP Server</strong>的文件目录系统级别的配置文件的默认的名字，它提供了再主配置文件中定义用户自定义指令的支持。它可以实现：网页301重定向、自定义404页面、改变文件扩展名、允许/阻止特定的用户或者目录的访问、jinzhi8目录列表、配置默认文档等功能。也就是我们可以通过这个文件达到更改Apache配置的目的。.htaccess的用途范围主要针对当前目录。</p>
-<h3 id="1-1开启-htaccess支持"><a href="#1-1开启-htaccess支持" class="headerlink" title="1.1开启.htaccess支持"></a>1.1开启.htaccess支持</h3><p>启用.htaccess，需要修改httpd.conf，启用AllowOverride，即将原有配置下的AllowOverride None 修改为 AllowOverride All。</p>
-<h3 id="1-2通过-htaccess文件来控制文件的访问权限"><a href="#1-2通过-htaccess文件来控制文件的访问权限" class="headerlink" title="1.2通过.htaccess文件来控制文件的访问权限"></a>1.2通过.htaccess文件来控制文件的访问权限</h3><p>我们在很多时候会遇到这样的情况，可以上传后门文件到服务器上，但是改上传目录不能禁止外部访问，或者是不解析脚本，但如果他开启了.htaccess的支持，我们就可以通过它来重写Apache配置（只对当前目录有效），然后执行我们的脚本文件。</p>
-<h3 id="1-3-利用方式"><a href="#1-3-利用方式" class="headerlink" title="1.3 利用方式"></a>1.3 利用方式</h3><p>利用写文件函数复写.htaccess文件，即可任意定义解析名单，通过一个.htaccess文件调用php的解释器去解析一个文件名中只要包含“test.jpg”的任意文件，所以无论文件名是什么样子，只要包含“test.jpg”这个字符串，都可以被以php的方式来解析，一个自定义的.htaccess文件就可以以各种各样的方式去绕过很多上传验证机制。</p>
-<p>建立的.htaccess文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;FileMatch “test.jpg”&gt;</span><br><span class="line">SetHandler application/x-httpd-php</span><br><span class="line">&lt;/FileMatch&gt;</span><br></pre></td></tr></table></figure>
-<p>或者任意字符如：“haha”，都可以以php的方式来解析。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;FileMatch “haha”&gt;</span><br><span class="line">SetHandler application/x-httpd-php</span><br><span class="line">&lt;/FileMatch&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="2-user-ini文件构造后门"><a href="#2-user-ini文件构造后门" class="headerlink" title="2 .user.ini文件构造后门"></a>2 .user.ini文件构造后门</h2><h3 id="2-1-user-ini文件"><a href="#2-1-user-ini文件" class="headerlink" title="2.1 .user.ini文件"></a>2.1 .user.ini文件</h3><p>​        .user.ini比.htaccess文件用的更广泛，可以应用在Nginx/Apache/IIS等，只要是fastcgi运行的php都可以用这个方法。那么什么是.user.ini，.user.ini是php默认的配置文件，其中包括了很多php的配置，这些配置中包含以下几种：</p>
-<table>
-<thead>
-<tr>
-<th>模式</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PHP_INI_USER</td>
-<td>可在用户脚本（例如ini_set()）或Windows注册表（php5.3起）以及.user.ini中设定</td>
-</tr>
-<tr>
-<td>PHP_INI_PERDIR</td>
-<td>可在php.ini，.htaccess或httpd.conf中设定</td>
-</tr>
-<tr>
-<td>PHP_INI_SYSTEM</td>
-<td>可在php.ini或httpd.conf中设定</td>
-</tr>
-<tr>
-<td>PHP_INI_ALL</td>
-<td>可在任何地方设定</td>
-</tr>
-</tbody>
-</table>
-<p>​        其中在PHP_INI_USER中提到可以在.user.ini中进行设置，官方的<a href="https://www.php.net/manual/zh/configuration.file.per-user.php" target="_blank" rel="noopener">解释</a>是：</p>
-<p>​        除了主 php.ini 之外，PHP 还会在每个目录下扫描 INI 文件，从被执行的 PHP 文件所在目录开始一直上升到 web 根目录（<a href="https://www.php.net/manual/zh/reserved.variables.server.php" target="_blank" rel="noopener">$_SERVER[‘DOCUMENT_ROOT’]</a> 所指定的）。如果被执行的 PHP 文件在 web 根目录之外，则只扫描该目录。</p>
-<p>​        在 .user.ini 风格的 INI 文件中只有具有 <strong>PHP_INI_PERDIR</strong> 和 <strong>PHP_INI_USER</strong> 模式的 INI 设置可被识别。</p>
-<p>​        因此，.user.ini实际上就是一个可以由用户“自定义”的php.ini，我们能够自定义的设置模式是“PHP_INI_PERDIR、PHP_INI_USER”的设置。实际上除了PHP_INI_SYSTEM以外的模式都是可以通过.user.ini来设置。并且，和php.ini不同的是，.user.ini是一个可以被动态加载的ini文件，也就是说若是修改.user.ini后，不需要重启服务器中间件，只需要等到user_ini.cache_ttl所设置的时间（默认为300秒），即可被重新加载。</p>
-<h3 id="2-2利用方式"><a href="#2-2利用方式" class="headerlink" title="2.2利用方式"></a>2.2利用方式</h3><p>​        利用php配置项中的auto_append_file和auto_prepend_file可以进行文件包含。auto_prepend_file类似于在文件前调用了require（）函数，而auto_append_file只是在文件后面包含。使用方法：</p>
-<p>直接在.user.ini中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto_prepend_file=01.gif</span><br></pre></td></tr></table></figure>
-<p>​        01.gif就是要包含的文件。所以我们可以借助.user.ini让所有的php文件都“自动”包含某个文件。而这个文件可以是一个正常的php文件，也可以是一个webshell一句话</p>
-<p>在01.gif可以写一个php一句话，如果有检测&lt;?和检测是否是图片或者gif文件则需要使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GIF89a</span><br><span class="line">&lt;script language=&apos;php&apos;&gt;</span><br></pre></td></tr></table></figure>
-<p>进行绕过。若是某网站限制不允许上传.php文件，你便可以上传一个.user.ini，再上传一个图片马，包含起来进行getshell。不过前提是含有.user.ini的文件夹下需要有正常的php文件，否则也不能包含了。</p>
-
-          
+          <p>前几天打SUCTF的时候，遇到了一个上传文件的题目，是需要上传.user.ini进行绕过。作为一个刚刚入坑的web手，自然是不知道，问了师傅后，师傅又传授了几个文件绕过姿势，在此记录一下。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/23/Web安全学习之文件上传漏洞中的其他绕过姿势/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

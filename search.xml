@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2020%2F08%2F14%2FScrapy%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[1.1安装scrapy这个过程是异常艰辛的。如果你没有报错的话，那么恭喜你逃过一劫，如果像我一样满屏错，建议百度食用。 1pip install scrapy 1.2新建项目在当前目录下创建一个新的项目文件，与Django类似，在目录下打开cmd输入： 1scrapy startproject 项目名称 1.3运行爬虫应用运行所写的爬虫 1scrapy crawl 爬虫应用名称 yield Request用法yield Request（url，callback = self.get_name ，meta = {‘name’:novelname,’url’:novelurl}） 意思是请求新的url，callback跟的是回调函数，指需要用get_name函数来处理这个返回值。返回值会以参数的形式传递给所调用的函数。 meta是Scrapy中传递额外数据的方法，传递为字典形式。 提取一段文字中的链接及汉字在写爬虫，遇到下面一段，需要提取其中的url和名字，使用正则匹配的方式。正则如下 1234# 提取汉字novelname = re.findall(r&apos;[\u4e00-\u9fa5]+&apos;,str(tds))# 提取urlnovelurl = re.findall(r&apos;&lt;a href=&quot;([a-zA-z]+://[^\s]*)&quot;&apos;, str(tds)) . SQl语法，创建表和创建表名及运行。123456789DROP TABLE IF EXISTS `dd_name`;CREATE TABLE `dd_name` ( `id` int(11) NOT NULL AUTO_INCREMENT, `xs_name` varchar(255) DEFAULT NULL, `xs_author` varchar(255) DEFAULT NULL, `category` varchar(255) DEFAULT NULL, `name_id` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4; 上面是sql语法，执行就会创建一个名为‘dd_name’的表，其中包括‘id’,’xs_name’,’xs_author’,’category’,’name_id’等表头。 上面语法可以在Nabicat中使用，使用步骤如下： 1.点击查询 2.新建查询 3.把上面的语句粘贴进去，然后点击运行，即可。 框架中的settings设置1.用来设置数据库的内容： 2.防止重复爬取某一页面： 3.爬虫爬取的执行函数及其优先级，数字越低优先级越高：]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2020%2F08%2F14%2FPyQt5%E5%AF%BC%E5%85%A5%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E6%A8%A1%E5%9D%97%E9%94%99%E8%AF%AF%2F</url>
+    <content type="text"><![CDATA[问题描述：python3.5.2(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块 一、环境： window10（64bit）+anaconda +python3.5 + vsCode 二、问题描述 首先安装 1pip install PyQt5 安装pyqt5-tools 1pip install pyqt5-tools 测试是否能使用PyQt5 1from PyQt5.QtWidgets import QApplication,QWidget 出现以下现象 三、原因 通过Anaconda 安装的Python缺少了python3.dll。 四、解决方案 可以通过去 python.org下载所需版本的python安装包并安装，然后从安装目录中拷贝python3.dll文件，粘贴到Anaconda中对应python版本环境的安装目录下。找不到的话：百度云 然后就可以运行了。 参考自：python3.6.0(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2020%2F08%2F14%2FAnacond%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[Anaconda命令创建一个python3.6版本的环境。 1conda create --name [虚拟环境名] python=3.6 安装好以后使用activate激活/取消激活环境 1234activate [虚拟环境名] #for windowsdeactivate [虚拟环境名]source activate [虚拟环境名] # for Linux &amp; Mac 删除环境 1conda remove --name [虚拟环境名] --all 查看环境列表： 123conda info --env或者下面这个：conda env list 在当前环境下安装anaconda包的集合 123conda install anaconda或者在安装创建环境的时候运行如下命令：conda create -n [虚拟环境名] python=3.6 anaconda Anaconda安装新环境报错安装新环境的过程中报错如下： 把C:\Users\Hezhing\.condarc文件中的信息换成下面这个： 1234channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/show_channel_urls: true 然后再执行代码就可以了。 打不开Anaconda-Navigator右键，以管理员方式打开。 Anaconda环境安装时报错 百度说，是因为有个包没安装成功，再运行一遍就好，再运行一遍后，显示安装成功。]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2020%2F08%2F14%2F%E5%AD%A6%E4%B9%A0%E6%96%B0%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[urljoin函数：​ 需要导入urllib包，用法：urllib.parse.urljoin(url1,url2) ​ 说明：拼接两个url的绝对路径 yield用法：​ yield 是一个类似 return 的关键字，迭代一次遇到yield时就返回yield后面(右边)的值 ​ 注：下一次迭代时，从上一次迭代遇到的yield后面的代码(下一行)开始执行。return 的作用：如果没有 return，则默认执行至函数完毕，相当于每次迭代都返回一次。 批量读取json格式文件​ 前景摘要：要做可视化，之前做热力图分析时，把所有的地点都做成了经纬度坐标的形式，但是在读取的时候遇到了问题。格式是下面这样的： ​ 使用json中的load或者loads读都有报错，网上百度，我使用json.load()报的错要使用json.loads()，使用json.loads()报的错要使用json.load()。 ​ 最后实在没有办法，我先把json转成txt，然后逐行读取，使用json里面的dump把每一行都保存成一个json文件，然后在逐个load。最后取数据的时候跟我说str不行，要用int型，然后我直接使用split(‘,’)把整个str字符串分开，然后取出。代码及效果如下图： pyecharts环境配置问题参考链接： pyechart 与jupyter 交互式 Ubuntu使用sudo apt-get install xxx 时报错 这个问题很可能是有另外一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因除了真正用另一个终端安装程序外，很可能是上次运行安装或更新没有正常完成导致，可以输入以下命令尝试解决。 12sudo rm /var/cache/apt/archives/locksudo rm /var/lib/dpkg/lock 完美解决。]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2020%2F08%2F14%2FVScode%E8%BE%93%E5%87%BA%E4%B8%AD%E6%96%87%E7%BC%96%E7%A0%81%E9%94%99%E8%AF%AF%2F</url>
+    <content type="text"><![CDATA[VScode输出中文编码错误在写爬虫的时候，在终端输出一个网页的介绍时，发现报错，出现中文乱码，试了网上的很多办法，有添加环境变量，有修改文件等等，但都不起作用，最后在网上找了一个办法，即：先输入“chcp 65001” 再执行代码。 具体原因我通过网上查找发现 输入chcp就可以查看活动代码页即可以通过chcp命令查看cmd的编码设置，GBK2312的代码页编号是936，然后改成utf-8的编码即可而utf-8的代码页编号是 65001 但这种办法每次运行都要输入，所以我又寻找一劳永逸的办法。即：在settings.json文件中添加下面这行： 1&quot;terminal.integrated.shellArgs.windows&quot;: [&quot;/K&quot;, &quot;chcp 65001&quot;] 或者 1&quot;terminal.integrated.shellArgs.windows&quot;: [&quot;-NoExit&quot;, &quot;/c&quot;, &quot;chcp.com 65001&quot;] VS2013运行时出现“无法查找或打开PDB文件”（1）说明：使用VS编译程序时出现“无法查找或打开PDB文件”的提示，并且程序无法运行，却又没报错。 （2）原因：并非代码错误，而是编辑器设置的问题，改一下就好。 （3）解决办法： 1.选择菜单栏中“调试 –&gt; 选项”。 2.在“选项”中，选择“调试 –&gt; 常规”，在右侧选项栏中勾选“”“启用源服务器支持”（包含的 3 个子选项不用勾选），此时会弹出一个安全警报框，选择“是”即可 3.然后在“选项”对话框中，选择“调试 –&gt; 符号”，在右侧选项栏中勾选“Microsoft符号服务器”，此时会弹出一个提示对话框，点击“确定”即可。同时，对于缓存符号的目录选择“C:\Users”即可。 4.确定之后，重新运行你的程序，首次运行时，由于编译器会加载所有动态链接库的pdb文件，可能会等到几秒钟。程序运行后，之前输出窗口中的“无法查找或打开pdb文件”的提示不见了，如图： VS2013在编译SeetFace时报错（1）说明：在按照网上的配置完成后，在编译的时候出现报错“error C1083 无法打开 “opencv2/highgui/highgui.hpp”” （2）原因：使用的是x64的平台，却在属性管理器中配置的是win32的环境。 解决办法： 把win32改成x64。 VS2013+OpenCV2411+SeetaFace环境配置详见链接 VS2013+OpenCV2411+SeetaFace环境配置 VS2013在编辑SeetaFace生成FaceAilgnment.lib时报错报错信息如下： 解决方案： 点击项目属性–&gt;在C/C++中的预处理器中编辑预处理器定义–&gt;添加“_CRT_SECURE_NO_WARNINGS”–&gt;重新生成 VS2013编译FaceAilgnment报错：msvcr120.dll报错如下： 解决办法： 把这个 1234567#ifdef _WIN32std::string DATA_DIR = &quot;../../data/&quot;;std::string MODEL_DIR = &quot;../../model/&quot;;#elsestd::string DATA_DIR = &quot;./data/&quot;;std::string MODEL_DIR = &quot;./model/&quot;;#endif 替换成这个： 1234567#ifdef _WIN32std::string DATA_DIR = &quot;\\data\\&quot;;std::string MODEL_DIR = &quot;\\\model\\&quot;;#elsestd::string DATA_DIR = &quot;\\data\\&quot;;std::string MODEL_DIR = &quot;\\model\\&quot;;#endif]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[软件推荐]]></title>
     <url>%2F2019%2F11%2F06%2F%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%2F</url>
     <content type="text"><![CDATA[软件推荐​ 推荐的软件都是我现在在用的。有些软件开发者已经不再更新了，但功能却是很完善的。而这些工具能够极大的提高你的工作效率。每个推荐工具的标题都链接着这个工具的下载地址。如果失效请及时与作者联系。 1.Snipaste ​ 这个软件是 国人开发的一款截图软件，挺简洁的 ，当然很多人都在使用windows自带的截图工具截图或者qq截图，但我想推荐的仍然是这个。他的功能很简单，就是截屏和贴图，快捷键可以自己进行设定。真正让我强烈推荐的，是他的贴图功能，可以无障碍的贴在任何地方，并且覆盖在其上面。无论进行什么操作，都在上面覆盖。这样当你有两个或者多个文档中的特定句子需要联系在一起的时候，你会感觉到它是多么强大。这篇文章中的截图都是出自它手哦。 2.f.lux​ ​ 这个软件是一个屏保软件，不同于其他屏保软件，它比较专注于视力保护。作为一个程序员，长期盯着电脑难免眼睛会受到影响，这个软件可以根据时间调整屏幕颜色，减少蓝光对实例的影响。类似于手机开启的护眼模式。而且可以自己调整时间。十分方便。 3.Ditto ​ 这是一个比较小众的工具。主要功能是一个剪贴板的功能，可以记录你上一步复制的内容，只需要设置快捷键即可，对于经常用于文字编辑的同学，可谓是神器了。 4.WGesture​ ​ 这个软件也算是一个小众软件，主要的作用便是鼠标手势，且是全局鼠标手势！尽管现在已经不更新了，但使用到现在依旧没发现什么很大的bug，仅有的一项是，如果你打开了VMware虚拟机，那么在虚拟机中的右键可能会受到影响，只要退出该应用即可。简单方便。你值得拥有。 5.火柴 、uTools 、Everything​ ​ 火柴的前身是火萤酱。之前的火萤酱感觉没有现在的火柴好用。不过都是只需要双击Ctrl键就可以启动。相比于everything来说，火柴多了很多拓展功能。可以自定义添加许多插件，可以在内网中进行聊天和传输文件。类似于这个软件的一个软件交utools，也是可以添加插件的。不过它们的查找仍然还是基于everything的，所以如果想要简洁一些的，可以使用everything，如果想要拓展一些其他功能，可以选用火柴或者utools。目前我在用火柴。 6.Bandizip 、 7zip​ ​ 这是一款解压软件，清新简介，功能很强大。可以设置双击自动解压。从看到这个软件开始就一直在用。很强大。相同的软件同样推荐7zip 7.Typora​ ​ 韩国的一款Markdown写作工具，具有Markdown所需的所有功能，书写画面也是十分简介，还是免费的。喜欢简单的人可入。这篇文章就是这个工具写的。 8.PasteEx​ ​ 这是一个可以把剪切板中的内容直接粘贴成文件的工具。比如你截一个图以后，点击右键粘贴为文件，就可以直接把所截的图片粘贴为你想要的格式的文件。还可以选择保存的位置。十分方便。 9.PotPlayer 这是一个视频播放软件。相比于暴风影音，无广告，且能力出众，谁用谁知道。 10.Clover Clover 是 Windows Explorer 资源管理器的一个扩展，为其增加类似谷歌 Chrome 浏览器的多标签页功能。 也就是你打开的我的电脑，也会带有标签。方便管理。 11 or others好用的工具有很多，主要看你怎么用，有怎么样的需求，就有怎么样的工具能够帮到你。这里放一个工具推荐的网站，我没有提到的必定有很多，这里推荐的都是我现阶段都在用的工具，感觉十分方便。以后再做更新。]]></content>
@@ -42,19 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hello2019]]></title>
-    <url>%2F2019%2F08%2F06%2Fhello2019%2F</url>
-    <content type="text"><![CDATA[本网站自2018年6月23日运行以来，共计推送11篇文章，由于种种原因（主要是我太懒），一直未曾更新。但经过深刻反思，决定重新拾起博客，开始更新。欢迎各位大佬指正。]]></content>
-      <tags>
-        <tag>-life</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F08%2F06%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Python安装mysqlclinent报错及解决]]></title>
     <url>%2F2018%2F10%2F21%2FPython%E5%AE%89%E8%A3%85mysqlclinent%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%2F</url>
     <content type="text"><![CDATA[遇见的问题 学习Django的时候需要使用数据库，在安装的过程中出现报错。 问题 报错：_mysql.c(42) : fatal error C1083: Cannot open include file: ‘config-win.h’: No such file or directory 问题一解决： 参考我的上一篇文章，Windows下安装Scrapy框架遇到的问题不过现在不是下载Twisted，而是下载mysqlclient，下载版本依电脑配置而定。安装如下：]]></content>
@@ -66,33 +78,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[基于Python Django框架的文档查找系统]]></title>
-    <url>%2F2018%2F10%2F16%2FDjango%2F</url>
-    <content type="text"><![CDATA[Django项目的创建和运行。cmd运行命令 创建项目 （1）创建项目命令：django-admin startproject + 项目名称创建的文件的目录：目录介绍：（1） init .py :说明test1是一个Python包（2）setting.py :项目的配置文件（3）urls.py :进行url路由的配置（4）wsgi.py :web服务器和django交互的入口（5） manage.py :项目管理文件、 创建应用 （2）创建应用命令：python manage.py startapp +应用名称 注：需要在项目目录下创建，否则不生效。应用创建目录：目录介绍：（1） init .py :说明目录是一个Python模块（2）models.py :写和数据库相关内容（3）views.py :视图函数（4）test.py :写测试代码的文件（5）admin.py :网站后台管理相关文件 链接应用 打开setting.py文件，在INSTALLAPP下添加应用名称。 运行项目 直接在cmd中输入命令：python manage.py runserver 然后访问：http://localhost:8000/ #]]></content>
-      <categories>
-        <category>实验室项目开发</category>
-      </categories>
-      <tags>
-        <tag>Django</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Ubuntu16.04 iso文件下载及虚拟机安装]]></title>
     <url>%2F2018%2F10%2F15%2FUbuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[#下载下载地址 点击如下下载32位或者64位iso文件，这里我下载的是64位桌面版的然后打开VMware Workstation进行安装操作，具体参照下面图片 首先新建然后典型，下一步。选择下载的iso文件.后面按部就班操作就行。]]></content>
       <tags>
         <tag>软件安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[歌单推荐]]></title>
-    <url>%2F2018%2F10%2F03%2F%E6%AD%8C%E5%8D%95%E6%8E%A8%E8%8D%90%2F</url>
-    <content type="text"><![CDATA[[20181003]歌名歌手推荐理由优美歌词摘抄生命中的时光 链接 齐一 齐一不便多说，第一次听到他的声音，是那首《这个年纪》，苍翠有力，活泼俏皮，当时没少单曲循环。今日首推这首歌，作词作曲皆为上品，“想要把自己活成一场梦，一首歌一部电影。”已经折服了我。少不了励志词语，”每天醒来的时候照照镜子，用一个微笑补偿自己”。让人不禁感叹，生命中那些难熬的时光，终将会在某一天找到所有孤独的意义。 在只有凌晨才不会太拥挤的城市我披星戴月独自穿行 想要把自己活成一场梦一首歌一部电影就算会半梦半醒就算压（押）不上韵却还是期待所有故事结局 我会在每天醒来的时候照照镜子用一个微笑补偿自己生活太不容易却仍不甘心问问自己是否拼尽全力 我也佩服我的勇气也心疼所有孤独的意义 [20181004]歌名歌手推荐理由优美歌词摘抄这个年纪 链接 齐一 这是我听的齐一的第一首歌，当时我是高三，正值年少，资历尚且，无法听出歌中的无助和难以为继。齐一当时年过三十，缺乏了我这个年纪的冲动，多了一丝成熟稳重，从他口中唱出的词多了一丝岁月的韵味，可能就是那一句话，该来的总会来该走的也无法挽留折服了我。如今再看，没了一些东西，又有了一些东西。或许当我年过三十再回首，可能会感叹，这就是生活吧。 当我习惯把实话都变成了童话那我的单纯呢 那我的单纯呢这个年纪我已不再将就有些事情无法强求该来的总会来该走的也无法挽留 [20181005]歌名歌手推荐理由优美歌词摘抄只只 链接 孟凡明 以前从未听过他的歌。遇到这首歌纯属意外。初感是一首写给另一半的歌曲，用词相比之前所听又没许多。作曲相对平缓很多，不像其他歌曲时而沉浮时而激烈，“十月过后的天空，醉酒般晕红”，初听时并不觉有多好听，但越听越觉有味。可能这就是平淡的喜欢一个人的感觉。把两个相恋的人的日常写的平淡无奇，却唱的深沉浓烈。 在山野间追风，去看遍世界黄昏与黎明 任时间过往匆匆，轻易就远去无声在人潮之中，想要拥抱你，哪怕片刻永恒我已经偷偷决定，把爱你的事澄清在百念之中，你依然是我，未寻得的旧梦 [20181009]歌名歌手推荐理由优美歌词摘抄可能否 链接 木小雅 不知怎说这首歌，经历过的自然懂的，不撞南墙不回头，不见黄河不死心。人生可能就需要这样的一股子劲，逼着自己，向前冲，管他对与错，管他是与非，管他谁是谁，可能多年之后，南墙撞到了，再不会出现，黄河干了，再不会出现，绝望不见了，成了美好的回忆。但这一起，均是可能否。 可能我撞了南墙才会回头吧可能我见了黄河才会死心吧可能我偏要一条路走到黑吧可能我还没遇见，那个他吧 春天的风 能否吹来夏天的雨秋天的月 能否照亮冬天的雪夜空的星 能否落向晨曦的海山间的泉 能否遇上南飞的雁断掉的弦 能否扯破自缚的茧熄灭的火 能否烧光残留的念梦中的云 能否化作熟悉的脸前世的劫 能否换来今生的缘 能否早一点 看透命运的伏线能否慢一点 挥霍有限的时间能否早一点 相信年少的誓言能否慢一点 感受岁月的缱绻 [20181017]歌名歌手推荐理由优美歌词摘抄倾尽天下 链接 河图 急速的开头可能只是衬托。而后的歌调婉转，歌词非要细听方才懂得。初不觉歌有如何，遂查背景，了解背景后，再回首听这首歌，格调完全不同。歌词讲述了周朝开国皇帝白炎、前朝敬帝与前朝最后一位贵妃朱砂的爱恨情仇。亦是追求爱情的典例。 七重纱衣 血溅了白纱兵临城下六军不发谁知再见已是 生死无话 明月照亮天涯最后谁又 得到了蒹葭江山嘶鸣战马怀抱中那 寂静的喧哗 回到那一刹那岁月无声也让人害怕枯藤长出枝桠原来时光已翩然轻擦 [20181020]歌名歌手推荐理由优美歌词摘抄年少有为 链接 李荣浩 李荣浩留给我的不止迷人的眼睛，还有那真切的痛感。听歌至今，也仅知他歌声的言语，带着几分自嘲，带着几分玩笑，带着几分不愿向生活妥协的倔强。“假如我年少有为不自卑，懂得什么是珍贵”，“加入我年少有为知进退，才不会让你替我受罪”，既是爱情，又是生活。能把生活写成歌词的人，又有几个。 假如我年少有为不自卑懂得什么是珍贵那些美梦没给你 我一生有愧假如我年少有为知进退才不会让你替我受罪婚礼上多喝几杯和你现在那位]]></content>
-      <categories>
-        <category>歌单</category>
-      </categories>
-      <tags>
-        <tag>歌单</tag>
       </tags>
   </entry>
   <entry>
@@ -115,28 +105,6 @@
       </categories>
       <tags>
         <tag>题解~</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[机器学习（一）：KNN算法的实现]]></title>
-    <url>%2F2018%2F07%2F30%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[##描述百度百科 ##算法实现原理： 1.计算已知类别数据集中的点与当前点之间的距离; 2.按照距离递增次序排序； 3.选取与当前点距离最小的k个点； 4.确定前k个点所在类别的出现频率； 5.返回前k个点所出现频率最高的类别作为当前点的预测分类。 ##算法实现： ###数据集的建立及python代码的实现：123456789import numpy as npfrom numpy import *import operator#训练集def creatDataSet(): group = array([[1.0,1.1],[1.0,1.0],[0,0],[0,0.1]]) labels = [&apos;A&apos;,&apos;A&apos;,&apos;B&apos;,&apos;B&apos;] return group, labels ####运行结果： 如下图： ###KNN算法的实现：12345678910111213141516171819202122232425262728293031#KNN分类# inX 用于分类的数据（即测试集）# dataSet 用于训练的数据（即测试集）# labels 分类的标签# k KNN算法中 K 的值def classify(inX,dataSet,labels,k): #计算距离 dataSetSize = dataSet.shape[0] #返回dataSet的行数 diffMat = np.tile(inX, (dataSetSize,1)) - dataSet #inX 在（行向量方向上重复，列向量方向上重复）次数 sqDiffMat = diffMat**2 #二维特征相减后平方 sqDistances = sqDiffMat.sum(axis=1) #相减平方再相加 distances = sqDistances**0.5 #再开方 #排序（从小到大） sortedDistIndices = distances.argsort() #排序并返回下标 classCount = &#123;&#125; #定义一个记录类别次数的字典 for i in range(k): voteIlabel = labels[sortedDistIndices[i]] #取出前K个元素的类别 classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 #计算类别的次数# key=operator.itemgetter(1)根据字典的值进行排序# key=operator.itemgetter(0)根据字典的键进行排序# reverse降序排序字典 sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(1),reverse=True) # 降序排序 return sortedClassCount[0][0] ####测试结果：]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Counterfeit Dollar(枚举)]]></title>
-    <url>%2F2018%2F07%2F07%2FCounterfeit-Dollar-%E6%9E%9A%E4%B8%BE%2F</url>
-    <content type="text"><![CDATA[描述传送门 Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even though its color and size make it indistinguishable from the real silver dollars. The counterfeit coin has a different weight from the other coins but Sally does not know if it is heavier or lighter than the real coins.Happily, Sally has a friend who loans her a very accurate balance scale. The friend will permit Sally three weighings to find the counterfeit coin. For instance, if Sally weighs two coins against each other and the scales balance then she knows these two coins are true. Now if Sally weighsone of the true coins against a third coin and the scales do not balance then Sally knows the third coin is counterfeit and she can tell whether it is light or heavy depending on whether the balance on which it is placed goes up or down, respectively.By choosing her weighings carefully, Sally is able to ensure that she will find the counterfeit coin with exactly three weighings. input The first line of input is an integer n (n &gt; 0) specifying the number of cases to follow. Each case consists of three lines of input, one for each weighing. Sally has identified each of the coins with the letters A–L. Information on a weighing will be given by two strings of letters and then one of the words “up”, “down”, or “even”. The first string of letters will represent the coins on the left balance; the second string, the coins on the right balance. (Sally will always place the same number of coins on the right balance as on the left balance.) The word in the third position will tell whether the right side of the balance goes up, down, or remains even. output For each case, the output will identify the counterfeit coin by its letter and tell whether it is heavy or light. The solution will always be uniquely determined. 样例12345678910input:1 ABCD EFGH even ABCI EFJK up ABIJ EFGH even output:K is the counterfeit coin and it is light. 题意理解+思路题意理解 题意说一共有12个硬币，其中有一个是假币，不知道是重还是轻，一共可以称量3次来寻找假币。输入第一行是n（n&gt;0），指需要测试的案例数。每个案例由3行输入，用A-L来表示硬币。第一串字母代表天平左边，第二串代表天平右边，第三串字母由 even up down 来分别表示保持平衡、天平右侧上升、天平右侧下降。要求找出假币所代表的的字母并告知是重还是轻。 思路 开12个数组代表A-L，并赋初值为0，若天平平衡，则将左右的所有字母对应的数组都赋值为一个固定的数，若不平衡，则首先除去固定数的数组（数字固定，表示是真币）然后将重的一侧加一，轻的一侧减一。最后遍历数组寻找出绝对值最大的数就是假币，因为这个数字是被怀疑次数最多的。如果除去绝对值为正，则为重，否则为轻。 AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566#include&lt;stdio.h&gt;#include&lt;string.h&gt;#include&lt;math.h&gt; int main()&#123; int n,k,i,t,len,max; char s1[13],s2[13],temp[10]; int a[12]; scanf(&quot;%d&quot;,&amp;n); while(n--) &#123; memset(a,0,sizeof(a)); for(t=0;t&lt;3;t++) &#123; scanf(&quot;%s%s%s&quot;,s1,s2,temp); len=strlen(s1); //两边个数肯定相等，所以两边长度也一样,不能只看样例便觉得一定是4而忽略这一步，否则会 WA if(strcmp(temp,&quot;even&quot;)==0) &#123; for(i=0;i&lt;len;++i) &#123; a[s1[i]-&apos;A&apos;]=10; //说明两边都为真，将标记数组置为10（10为自己设置的固定的数，但不能过小否则会错。） a[s2[i]-&apos;A&apos;]=10; &#125; &#125; else if(strcmp(temp,&quot;up&quot;)==0)//说明左边重 &#123; for(i=0;i&lt;len;++i) &#123; if(a[s1[i]-&apos;A&apos;]!=10) ++a[s1[i]-&apos;A&apos;]; //左边加一 if(a[s2[i]-&apos;A&apos;]!=10) --a[s2[i]-&apos;A&apos;]; //右边减一 &#125; &#125; else &#123; for(i=0;i&lt;len;++i) //说明右边重 &#123; if(a[s1[i]-&apos;A&apos;]!=10) --a[s1[i]-&apos;A&apos;]; //左边减一 if(a[s2[i]-&apos;A&apos;]!=10) ++a[s2[i]-&apos;A&apos;]; //右边加一 &#125; &#125; &#125; max=0; k=0; for(i=0;i&lt;12;++i) &#123; if(a[i]==10) continue; if(max&lt;=abs(a[i])) &#123; max=abs(a[i]); k=i; &#125; &#125; if(a[k]&gt;0) //去绝对值后的符号决定轻重。 printf(&quot;%c is the counterfeit coin and it is heavy.\n&quot;,&apos;A&apos;+k); else printf(&quot;%c is the counterfeit coin and it is light.\n&quot;,&apos;A&apos;+k); &#125; return 0; &#125;]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>枚举</tag>
       </tags>
   </entry>
   <entry>

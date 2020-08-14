@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhihening.me/"/>
-  <updated>2019-11-07T01:34:29.512Z</updated>
+  <updated>2019-07-11T13:06:23.729Z</updated>
   <id>http://zhihening.me/</id>
   
   <author>
@@ -15,6 +15,114 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://zhihening.me/2020/08/14/Scrapy%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://zhihening.me/2020/08/14/Scrapy框架学习/</id>
+    <published>2020-08-14T05:58:18.601Z</published>
+    <updated>2019-07-11T13:06:23.729Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-1安装scrapy"><a href="#1-1安装scrapy" class="headerlink" title="1.1安装scrapy"></a>1.1安装scrapy</h3><p>这个过程是异常艰辛的。如果你没有报错的话，那么恭喜你逃过一劫，如果像我一样满屏错，建议百度食用。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure><h3 id="1-2新建项目"><a href="#1-2新建项目" class="headerlink" title="1.2新建项目"></a>1.2新建项目</h3><p>在当前目录下创建一个新的项目文件，与Django类似，在目录下打开cmd输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject 项目名称</span><br></pre></td></tr></table></figure><h3 id="1-3运行爬虫应用"><a href="#1-3运行爬虫应用" class="headerlink" title="1.3运行爬虫应用"></a>1.3运行爬虫应用</h3><p>运行所写的爬虫</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl 爬虫应用名称</span><br></pre></td></tr></table></figure><h3 id="yield-Request用法"><a href="#yield-Request用法" class="headerlink" title="yield Request用法"></a>yield Request用法</h3><p>yield Request（url，callback = self.get_name ，meta = {‘name’:novelname,’url’:novelurl}）</p><p>意思是请求新的url，callback跟的是回调函数，指需要用get_name函数来处理这个返回值。返回值会以参数的形式传递给所调用的函数。</p><p>meta是Scrapy中传递额外数据的方法，传递为字典形式。</p><h3 id="提取一段文字中的链接及汉字"><a href="#提取一段文字中的链接及汉字" class="headerlink" title="提取一段文字中的链接及汉字"></a>提取一段文字中的链接及汉字</h3><p>在写爬虫，遇到下面一段，需要提取其中的url和名字，使用正则匹配的方式。正则如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 提取汉字</span><br><span class="line">novelname = re.findall(r&apos;[\u4e00-\u9fa5]+&apos;,str(tds))</span><br><span class="line"># 提取url</span><br><span class="line">novelurl = re.findall(r&apos;&lt;a href=&quot;([a-zA-z]+://[^\s]*)&quot;&apos;, str(tds))</span><br></pre></td></tr></table></figure><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562665485487.png" alt="1562665485487">.</p><h3 id="SQl语法，创建表和创建表名及运行。"><a href="#SQl语法，创建表和创建表名及运行。" class="headerlink" title="SQl语法，创建表和创建表名及运行。"></a>SQl语法，创建表和创建表名及运行。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `dd_name`;</span><br><span class="line">CREATE TABLE `dd_name` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `xs_name` varchar(255) DEFAULT NULL,</span><br><span class="line">  `xs_author` varchar(255) DEFAULT NULL,</span><br><span class="line">  `category` varchar(255) DEFAULT NULL,</span><br><span class="line">  `name_id` varchar(255) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4;</span><br></pre></td></tr></table></figure><p>上面是sql语法，执行就会创建一个名为‘dd_name’的表，其中包括‘id’,’xs_name’,’xs_author’,’category’,’name_id’等表头。</p><p>上面语法可以在Nabicat中使用，使用步骤如下：</p><p>1.点击查询</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850026253.png" alt="1562850026253"></p><p>2.新建查询</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850047875.png" alt="1562850047875"></p><p>3.把上面的语句粘贴进去，然后点击运行，即可。</p><h2 id="框架中的settings设置"><a href="#框架中的settings设置" class="headerlink" title="框架中的settings设置"></a>框架中的settings设置</h2><p>1.用来设置数据库的内容：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850199218.png" alt="1562850199218"></p><p>2.防止重复爬取某一页面：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850276151.png" alt="1562850276151"></p><p>3.爬虫爬取的执行函数及其优先级，数字越低优先级越高：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850379559.png" alt="1562850379559"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-1安装scrapy&quot;&gt;&lt;a href=&quot;#1-1安装scrapy&quot; class=&quot;headerlink&quot; title=&quot;1.1安装scrapy&quot;&gt;&lt;/a&gt;1.1安装scrapy&lt;/h3&gt;&lt;p&gt;这个过程是异常艰辛的。如果你没有报错的话，那么恭喜你逃过一劫，如果像
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://zhihening.me/2020/08/14/PyQt5%E5%AF%BC%E5%85%A5%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E6%A8%A1%E5%9D%97%E9%94%99%E8%AF%AF/"/>
+    <id>http://zhihening.me/2020/08/14/PyQt5导入找不到指定模块错误/</id>
+    <published>2020-08-14T05:58:18.600Z</published>
+    <updated>2020-01-09T10:11:11.384Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>问题描述：</strong>python3.5.2(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块</p><p><strong>一、环境：</strong></p><p>window10（64bit）+anaconda +python3.5 + vsCode</p><p><strong>二、问题描述</strong></p><p>首先安装</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5</span><br></pre></td></tr></table></figure><p>安装pyqt5-tools</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyqt5-tools</span><br></pre></td></tr></table></figure><p>测试是否能使用PyQt5</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QApplication,QWidget</span><br></pre></td></tr></table></figure><p>出现以下现象</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\image-20200109180341507.png" alt="image-20200109180341507"></p><p><strong>三、原因 </strong></p><p>通过Anaconda 安装的Python缺少了python3.dll。</p><p><strong>四、解决方案</strong></p><p>可以通过去 <a href="https://www.python.org/" target="_blank" rel="noopener">python.org</a>下载所需版本的python安装包并安装，然后从安装目录中拷贝python3.dll文件，粘贴到Anaconda中对应python版本环境的安装目录下。找不到的话：<a href="https://pan.baidu.com/s/1AmVLsu7TkiIib3bSISENkQ" target="_blank" rel="noopener">百度云</a></p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\image-20200109180537282.png" alt="image-20200109180537282"></p><p>然后就可以运行了。</p><p>参考自：<a href="https://blog.csdn.net/Ltime/article/details/71403947" target="_blank" rel="noopener">python3.6.0(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;python3.5.2(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一、环境：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;window10（64bit）+anacon
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://zhihening.me/2020/08/14/Anacond%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://zhihening.me/2020/08/14/Anacond学习/</id>
+    <published>2020-08-14T05:58:18.599Z</published>
+    <updated>2019-07-02T07:19:42.841Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Anaconda命令"><a href="#Anaconda命令" class="headerlink" title="Anaconda命令"></a>Anaconda命令</h2><p>创建一个python3.6版本的环境。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --name [虚拟环境名] python=3.6</span><br></pre></td></tr></table></figure><p>安装好以后使用activate激活/取消激活环境</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">activate [虚拟环境名] #for windows</span><br><span class="line">deactivate [虚拟环境名]</span><br><span class="line"></span><br><span class="line">source activate [虚拟环境名] # for Linux &amp; Mac</span><br></pre></td></tr></table></figure><p>删除环境</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name [虚拟环境名] --all</span><br></pre></td></tr></table></figure><p>查看环境列表：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda info --env</span><br><span class="line">或者下面这个：</span><br><span class="line">conda env list</span><br></pre></td></tr></table></figure><p>在当前环境下安装anaconda包的集合</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda install anaconda</span><br><span class="line">或者在安装创建环境的时候运行如下命令：</span><br><span class="line">conda create -n [虚拟环境名] python=3.6 anaconda</span><br></pre></td></tr></table></figure><h2 id="Anaconda安装新环境报错"><a href="#Anaconda安装新环境报错" class="headerlink" title="Anaconda安装新环境报错"></a>Anaconda安装新环境报错</h2><p>安装新环境的过程中报错如下：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562048646425.png" alt="1562048646425"></p><p>把C:\Users\Hezhing\.condarc文件中的信息换成下面这个：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line"> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line"> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">show_channel_urls: true</span><br></pre></td></tr></table></figure><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562049922152.png" alt="1562049922152"></p><p>然后再执行代码就可以了。</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562049946112.png" alt="1562049946112"></p><h2 id="打不开Anaconda-Navigator"><a href="#打不开Anaconda-Navigator" class="headerlink" title="打不开Anaconda-Navigator"></a>打不开Anaconda-Navigator</h2><p>右键，以管理员方式打开。</p><h2 id="Anaconda环境安装时报错"><a href="#Anaconda环境安装时报错" class="headerlink" title="Anaconda环境安装时报错"></a>Anaconda环境安装时报错</h2><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562050911179.png" alt="1562050911179"></p><p>百度说，是因为有个包没安装成功，再运行一遍就好，再运行一遍后，显示安装成功。</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562050955320.png" alt="1562050955320"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Anaconda命令&quot;&gt;&lt;a href=&quot;#Anaconda命令&quot; class=&quot;headerlink&quot; title=&quot;Anaconda命令&quot;&gt;&lt;/a&gt;Anaconda命令&lt;/h2&gt;&lt;p&gt;创建一个python3.6版本的环境。&lt;/p&gt;
+&lt;figure class=
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://zhihening.me/2020/08/14/%E5%AD%A6%E4%B9%A0%E6%96%B0%E7%9F%A5%E8%AF%86/"/>
+    <id>http://zhihening.me/2020/08/14/学习新知识/</id>
+    <published>2020-08-14T05:58:18.598Z</published>
+    <updated>2019-07-12T12:02:19.121Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="urljoin函数："><a href="#urljoin函数：" class="headerlink" title="urljoin函数："></a>urljoin函数：</h2><p>​        需要导入urllib包，用法：urllib.parse.urljoin(url1,url2)</p><p>​        说明：拼接两个url的绝对路径</p><h2 id="yield用法："><a href="#yield用法：" class="headerlink" title="yield用法："></a>yield用法：</h2><p>​        yield 是一个类似 return 的关键字，迭代一次遇到yield时就返回yield后面(右边)的值</p><p>​        注：下一次迭代时，从上一次迭代遇到的yield后面的代码(下一行)开始执行。return 的作用：如果没有 return，则默认执行至函数完毕，相当于每次迭代都返回一次。</p><h2 id="批量读取json格式文件"><a href="#批量读取json格式文件" class="headerlink" title="批量读取json格式文件"></a>批量读取json格式文件</h2><p>​        前景摘要：要做可视化，之前做热力图分析时，把所有的地点都做成了经纬度坐标的形式，但是在读取的时候遇到了问题。格式是下面这样的：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1561967828116.png" alt="1561967828116"></p><p>​        使用json中的load或者loads读都有报错，网上百度，我使用json.load()报的错要使用json.loads()，使用json.loads()报的错要使用json.load()。</p><p>​        最后实在没有办法，我先把json转成txt，然后逐行读取，使用json里面的dump把每一行都保存成一个json文件，然后在逐个load。最后取数据的时候跟我说str不行，要用int型，然后我直接使用split(‘,’)把整个str字符串分开，然后取出。代码及效果如下图：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1561968335613.png" alt="1561968335613"></p><h2 id="pyecharts环境配置问题"><a href="#pyecharts环境配置问题" class="headerlink" title="pyecharts环境配置问题"></a>pyecharts环境配置问题</h2><p>参考链接：</p><p><a href="https://blog.csdn.net/zqs305082800/article/details/84581299" target="_blank" rel="noopener">pyechart 与jupyter 交互式</a></p><h2 id="Ubuntu使用sudo-apt-get-install-xxx-时报错"><a href="#Ubuntu使用sudo-apt-get-install-xxx-时报错" class="headerlink" title="Ubuntu使用sudo apt-get install xxx 时报错"></a>Ubuntu使用sudo apt-get install xxx 时报错</h2><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562932876173.png" alt="1562932876173"></p><p>这个问题很可能是有另外一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因除了真正用另一个终端安装程序外，很可能是上次运行安装或更新没有正常完成导致，可以输入以下命令尝试解决。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/cache/apt/archives/lock</span><br><span class="line">sudo rm /var/lib/dpkg/lock</span><br></pre></td></tr></table></figure><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562932923096.png" alt="1562932923096"></p><p>完美解决。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;urljoin函数：&quot;&gt;&lt;a href=&quot;#urljoin函数：&quot; class=&quot;headerlink&quot; title=&quot;urljoin函数：&quot;&gt;&lt;/a&gt;urljoin函数：&lt;/h2&gt;&lt;p&gt;​        需要导入urllib包，用法：urllib.parse.u
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://zhihening.me/2020/08/14/VScode%E8%BE%93%E5%87%BA%E4%B8%AD%E6%96%87%E7%BC%96%E7%A0%81%E9%94%99%E8%AF%AF/"/>
+    <id>http://zhihening.me/2020/08/14/VScode输出中文编码错误/</id>
+    <published>2020-08-14T05:58:18.568Z</published>
+    <updated>2019-07-08T12:19:20.301Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="VScode输出中文编码错误"><a href="#VScode输出中文编码错误" class="headerlink" title="VScode输出中文编码错误"></a>VScode输出中文编码错误</h2><p>在写爬虫的时候，在终端输出一个网页的介绍时，发现报错，出现中文乱码，试了网上的很多办法，有添加环境变量，有修改文件等等，但都不起作用，最后在网上找了一个办法，即：先输入“chcp 65001” 再执行代码。</p><p>具体原因我通过网上查找发现</p><p>输入chcp就可以查看活动代码页<br>即可以通过chcp命令查看cmd的编码设置，GBK2312的代码页编号是936，然后改成utf-8的编码即可而utf-8的代码页编号是  65001</p><p>但这种办法每次运行都要输入，所以我又寻找一劳永逸的办法。即：在settings.json文件中添加下面这行：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;terminal.integrated.shellArgs.windows&quot;: [&quot;/K&quot;, &quot;chcp 65001&quot;]</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;terminal.integrated.shellArgs.windows&quot;: [&quot;-NoExit&quot;, &quot;/c&quot;, &quot;chcp.com 65001&quot;]</span><br></pre></td></tr></table></figure><h2 id="VS2013运行时出现“无法查找或打开PDB文件”"><a href="#VS2013运行时出现“无法查找或打开PDB文件”" class="headerlink" title="VS2013运行时出现“无法查找或打开PDB文件”"></a>VS2013运行时出现“无法查找或打开PDB文件”</h2><p>（1）说明：使用VS编译程序时出现“无法查找或打开PDB文件”的提示，并且程序无法运行，却又没报错。</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562119680200.png" alt="1562119680200"></p><p>（2）原因：并非代码错误，而是编辑器设置的问题，改一下就好。</p><p>（3）解决办法：</p><p>1.选择菜单栏中“调试 –&gt; 选项”。</p><p>2.在“选项”中，选择“调试 –&gt; 常规”，在右侧选项栏中勾选“”“启用源服务器支持”（包含的 3 个子选项不用勾选），此时会弹出一个安全警报框，选择“是”即可</p><p>3.然后在“选项”对话框中，选择“调试 –&gt; 符号”，在右侧选项栏中勾选“Microsoft符号服务器”，此时会弹出一个提示对话框，点击“确定”即可。同时，对于缓存符号的目录选择“C:\Users”即可。</p><p>4.确定之后，重新运行你的程序，首次运行时，由于编译器会加载所有动态链接库的pdb文件，可能会等到几秒钟。程序运行后，之前输出窗口中的“无法查找或打开pdb文件”的提示不见了，如图：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562116281686.png" alt="1562116281686"></p><h2 id="VS2013在编译SeetFace时报错"><a href="#VS2013在编译SeetFace时报错" class="headerlink" title="VS2013在编译SeetFace时报错"></a>VS2013在编译SeetFace时报错</h2><p>（1）说明：在按照网上的配置完成后，在编译的时候出现报错“error C1083 无法打开 “opencv2/highgui/highgui.hpp””</p><p>（2）原因：使用的是x64的平台，却在属性管理器中配置的是win32的环境。</p><p>解决办法：</p><p>把win32改成x64。</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562121136456.png" alt="1562121136456"></p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562121168355.png" alt="1562121168355"></p><h2 id="VS2013-OpenCV2411-SeetaFace环境配置"><a href="#VS2013-OpenCV2411-SeetaFace环境配置" class="headerlink" title="VS2013+OpenCV2411+SeetaFace环境配置"></a>VS2013+OpenCV2411+SeetaFace环境配置</h2><p>详见链接</p><p><a href="https://blog.csdn.net/u014349384/article/details/76408114" target="_blank" rel="noopener">VS2013+OpenCV2411+SeetaFace环境配置</a></p><h2 id="VS2013在编辑SeetaFace生成FaceAilgnment-lib时报错"><a href="#VS2013在编辑SeetaFace生成FaceAilgnment-lib时报错" class="headerlink" title="VS2013在编辑SeetaFace生成FaceAilgnment.lib时报错"></a>VS2013在编辑SeetaFace生成FaceAilgnment.lib时报错</h2><p>报错信息如下：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586109764.png" alt="1562586109764"></p><p>解决方案：</p><p>点击项目属性–&gt;在C/C++中的预处理器中编辑预处理器定义–&gt;添加“_CRT_SECURE_NO_WARNINGS”–&gt;重新生成</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586142330.png" alt="1562586142330"></p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586168586.png" alt="1562586168586"></p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586192361.png" alt="1562586192361"></p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586220082.png" alt="1562586220082"></p><h2 id="VS2013编译FaceAilgnment报错：msvcr120-dll"><a href="#VS2013编译FaceAilgnment报错：msvcr120-dll" class="headerlink" title="VS2013编译FaceAilgnment报错：msvcr120.dll"></a>VS2013编译FaceAilgnment报错：msvcr120.dll</h2><p>报错如下：</p><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562588193761.png" alt="1562588193761"></p><p>解决办法： 把这个</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#ifdef _WIN32</span><br><span class="line">std::string DATA_DIR = &quot;../../data/&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;../../model/&quot;;</span><br><span class="line">#else</span><br><span class="line">std::string DATA_DIR = &quot;./data/&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;./model/&quot;;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure><p>替换成这个：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#ifdef _WIN32</span><br><span class="line">std::string DATA_DIR = &quot;\\data\\&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;\\\model\\&quot;;</span><br><span class="line">#else</span><br><span class="line">std::string DATA_DIR = &quot;\\data\\&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;\\model\\&quot;;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;VScode输出中文编码错误&quot;&gt;&lt;a href=&quot;#VScode输出中文编码错误&quot; class=&quot;headerlink&quot; title=&quot;VScode输出中文编码错误&quot;&gt;&lt;/a&gt;VScode输出中文编码错误&lt;/h2&gt;&lt;p&gt;在写爬虫的时候，在终端输出一个网页的介绍时，
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>软件推荐</title>
@@ -109,48 +217,6 @@
   </entry>
   
   <entry>
-    <title>hello2019</title>
-    <link href="http://zhihening.me/2019/08/06/hello2019/"/>
-    <id>http://zhihening.me/2019/08/06/hello2019/</id>
-    <published>2019-08-06T09:33:18.000Z</published>
-    <updated>2019-08-08T01:56:52.924Z</updated>
-    
-    <content type="html"><![CDATA[<p>本网站自2018年6月23日运行以来，共计推送11篇文章，由于种种原因（主要是我太懒），一直未曾更新。但经过深刻反思，决定重新拾起博客，开始更新。欢迎各位大佬指正。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;本网站自2018年6月23日运行以来，共计推送11篇文章，由于种种原因（主要是我太懒），一直未曾更新。但经过深刻反思，决定重新拾起博客，开始更新。欢迎各位大佬指正。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="-life" scheme="http://zhihening.me/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://zhihening.me/2019/08/06/hello-world/"/>
-    <id>http://zhihening.me/2019/08/06/hello-world/</id>
-    <published>2019-08-06T09:05:02.868Z</published>
-    <updated>2019-08-06T09:32:54.074Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Python安装mysqlclinent报错及解决</title>
     <link href="http://zhihening.me/2018/10/21/Python%E5%AE%89%E8%A3%85mysqlclinent%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3/"/>
     <id>http://zhihening.me/2018/10/21/Python安装mysqlclinent报错及解决/</id>
@@ -177,28 +243,6 @@
   </entry>
   
   <entry>
-    <title>基于Python Django框架的文档查找系统</title>
-    <link href="http://zhihening.me/2018/10/16/Django/"/>
-    <id>http://zhihening.me/2018/10/16/Django/</id>
-    <published>2018-10-16T11:56:18.000Z</published>
-    <updated>2018-10-20T16:03:11.834Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Django项目的创建和运行。"><a href="#Django项目的创建和运行。" class="headerlink" title="Django项目的创建和运行。"></a>Django项目的创建和运行。</h1><h2 id="cmd运行命令"><a href="#cmd运行命令" class="headerlink" title="cmd运行命令"></a>cmd运行命令</h2><a id="more"></a><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><blockquote><p>（1）创建项目命令：django-admin startproject + 项目名称<br>创建的文件的目录：<img src="http://wx1.sinaimg.cn/mw690/006GMOXhgy1fwac21vcfsj306w03sgli.jpg" alt="目录图片"><br>目录介绍：<br>（1）<strong> init </strong>.py :说明test1是一个Python包<br>（2）setting.py :项目的配置文件<br>（3）urls.py :进行url路由的配置<br>（4）wsgi.py :web服务器和django交互的入口<br>（5） manage.py :项目管理文件、</p></blockquote><h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><blockquote><p>（2）创建应用命令：python manage.py startapp +应用名称  注：需要在项目目录下创建，否则不生效。<br>应用创建目录：<img src="http://wx4.sinaimg.cn/mw690/006GMOXhgy1fwac229zkhj306v05ydfs.jpg" alt="目录图片"><br>目录介绍：<br>（1）<strong> init </strong>.py :说明目录是一个Python模块<br>（2）models.py :写和数据库相关内容<br>（3）views.py :视图函数<br>（4）test.py :写测试代码的文件<br>（5）admin.py :网站后台管理相关文件</p></blockquote><h3 id="链接应用"><a href="#链接应用" class="headerlink" title="链接应用"></a>链接应用</h3><blockquote><p>打开setting.py文件，在INSTALLAPP下添加应用名称。<img src="http://wx3.sinaimg.cn/mw690/006GMOXhgy1fwac22s6mfj30l90kawg7.jpg" alt="图片"></p></blockquote><h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><blockquote><p>直接在cmd中输入命令：python manage.py runserver  然后访问：<a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a></p></blockquote><p># </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Django项目的创建和运行。&quot;&gt;&lt;a href=&quot;#Django项目的创建和运行。&quot; class=&quot;headerlink&quot; title=&quot;Django项目的创建和运行。&quot;&gt;&lt;/a&gt;Django项目的创建和运行。&lt;/h1&gt;&lt;h2 id=&quot;cmd运行命令&quot;&gt;&lt;a href=&quot;#cmd运行命令&quot; class=&quot;headerlink&quot; title=&quot;cmd运行命令&quot;&gt;&lt;/a&gt;cmd运行命令&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="实验室项目开发" scheme="http://zhihening.me/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="Django" scheme="http://zhihening.me/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu16.04 iso文件下载及虚拟机安装</title>
     <link href="http://zhihening.me/2018/10/15/Ubuntu16-04-iso%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/"/>
     <id>http://zhihening.me/2018/10/15/Ubuntu16-04-iso文件下载及虚拟机安装/</id>
@@ -215,39 +259,6 @@
     
     
       <category term="软件安装" scheme="http://zhihening.me/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>歌单推荐</title>
-    <link href="http://zhihening.me/2018/10/03/%E6%AD%8C%E5%8D%95%E6%8E%A8%E8%8D%90/"/>
-    <id>http://zhihening.me/2018/10/03/歌单推荐/</id>
-    <published>2018-10-03T12:00:06.000Z</published>
-    <updated>2018-10-20T15:46:03.786Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="20181003"><a href="#20181003" class="headerlink" title="[20181003]"></a>[20181003]</h1><div class="tabs" id="20181003"><ul class="nav-tabs"><li class="tab active"><a href="#20181003-1">歌名</a></li><li class="tab"><a href="#20181003-2">歌手</a></li><li class="tab"><a href="#20181003-3">推荐理由</a></li><li class="tab"><a href="#20181003-4">优美歌词摘抄</a></li></ul><div class="tab-content"><div class="tab-pane active" id="20181003-1"><div class="note default"><blockquote><br><p>生命中的时光 <a href="http://music.163.com/m/song?id=500913929&amp;userid=612218245" target="_blank" rel="noopener">链接</a></p><br></blockquote></div></div><div class="tab-pane" id="20181003-2"><div class="note default"><blockquote><br><p>齐一</p><br></blockquote></div></div><div class="tab-pane" id="20181003-3"><blockquote><p>齐一不便多说，第一次听到他的声音，是那首《这个年纪》，苍翠有力，活泼俏皮，当时没少单曲循环。今日首推这首歌，作词作曲皆为上品，“想要把自己活成一场梦，一首歌一部电影。”已经折服了我。少不了励志词语，”每天醒来的时候照照镜子，用一个微笑补偿自己”。让人不禁感叹，生命中那些难熬的时光，终将会在某一天找到所有孤独的意义。</p></blockquote></div><div class="tab-pane" id="20181003-4"><blockquote><p>在只有凌晨才不会太拥挤的城市<br>我披星戴月独自穿行</p><p>想要把自己活成一场梦<br>一首歌一部电影<br>就算会半梦半醒就算压（押）不上韵<br>却还是期待所有故事结局</p><p>我会在每天醒来的时候照照镜子<br>用一个微笑补偿自己<br>生活太不容易却仍不甘心<br>问问自己是否拼尽全力</p><p>我也佩服我的勇气<br>也心疼所有孤独的意义</p></blockquote></div></div></div><a id="more"></a><h1 id="20181004"><a href="#20181004" class="headerlink" title="[20181004]"></a>[20181004]</h1><div class="tabs" id="20181004"><ul class="nav-tabs"><li class="tab active"><a href="#20181004-1">歌名</a></li><li class="tab"><a href="#20181004-2">歌手</a></li><li class="tab"><a href="#20181004-3">推荐理由</a></li><li class="tab"><a href="#20181004-4">优美歌词摘抄</a></li></ul><div class="tab-content"><div class="tab-pane active" id="20181004-1"><div class="note default"><blockquote><br><p>这个年纪 <a href="http://music.163.com/m/song?id=35476049&amp;userid=612218245" target="_blank" rel="noopener">链接</a></p><br></blockquote></div></div><div class="tab-pane" id="20181004-2"><div class="note default"><blockquote><br><p>齐一</p><br></blockquote></div></div><div class="tab-pane" id="20181004-3"><blockquote><p>这是我听的齐一的第一首歌，当时我是高三，正值年少，资历尚且，无法听出歌中的无助和难以为继。齐一当时年过三十，缺乏了我这个年纪的冲动，多了一丝成熟稳重，从他口中唱出的词多了一丝岁月的韵味，可能就是那一句话，该来的总会来该走的也无法挽留折服了我。如今再看，没了一些东西，又有了一些东西。或许当我年过三十再回首，可能会感叹，这就是生活吧。</p></blockquote></div><div class="tab-pane" id="20181004-4"><blockquote><p>当我习惯把实话都变成了童话<br>那我的单纯呢 那我的单纯呢<br>这个年纪我已不再将就有些事情无法强求<br>该来的总会来该走的也无法挽留</p></blockquote></div></div></div><h1 id="20181005"><a href="#20181005" class="headerlink" title="[20181005]"></a>[20181005]</h1><div class="tabs" id="20181005"><ul class="nav-tabs"><li class="tab active"><a href="#20181005-1">歌名</a></li><li class="tab"><a href="#20181005-2">歌手</a></li><li class="tab"><a href="#20181005-3">推荐理由</a></li><li class="tab"><a href="#20181005-4">优美歌词摘抄</a></li></ul><div class="tab-content"><div class="tab-pane active" id="20181005-1"><div class="note default"><blockquote><br><p>只只 <a href="http://music.163.com/m/song?id=519136840&amp;userid=612218245" target="_blank" rel="noopener">链接</a></p><br></blockquote></div></div><div class="tab-pane" id="20181005-2"><div class="note default"><blockquote><br><p>孟凡明</p><br></blockquote></div></div><div class="tab-pane" id="20181005-3"><blockquote><p>以前从未听过他的歌。遇到这首歌纯属意外。初感是一首写给另一半的歌曲，用词相比之前所听又没许多。作曲相对平缓很多，不像其他歌曲时而沉浮时而激烈，“十月过后的天空，醉酒般晕红”，初听时并不觉有多好听，但越听越觉有味。可能这就是平淡的喜欢一个人的感觉。把两个相恋的人的日常写的平淡无奇，却唱的深沉浓烈。</p></blockquote></div><div class="tab-pane" id="20181005-4"><blockquote><p>在山野间追风，去看遍世界<br>黄昏与黎明</p></blockquote><blockquote><p>任时间过往匆匆，轻易就远去无声<br>在人潮之中，想要拥抱你，哪怕片刻永恒<br>我已经偷偷决定，把爱你的事澄清<br>在百念之中，你依然是我，未寻得的旧梦</p></blockquote></div></div></div><h1 id="20181009"><a href="#20181009" class="headerlink" title="[20181009]"></a>[20181009]</h1><div class="tabs" id="20181009"><ul class="nav-tabs"><li class="tab active"><a href="#20181009-1">歌名</a></li><li class="tab"><a href="#20181009-2">歌手</a></li><li class="tab"><a href="#20181009-3">推荐理由</a></li><li class="tab"><a href="#20181009-4">优美歌词摘抄</a></li></ul><div class="tab-content"><div class="tab-pane active" id="20181009-1"><div class="note default"><blockquote><br><p>可能否 <a href="http://music.163.com/m/song?id=569214126&amp;userid=612218245" target="_blank" rel="noopener">链接</a></p><br></blockquote></div></div><div class="tab-pane" id="20181009-2"><div class="note default"><blockquote><br><p>木小雅</p><br></blockquote></div></div><div class="tab-pane" id="20181009-3"><blockquote><p>不知怎说这首歌，经历过的自然懂的，不撞南墙不回头，不见黄河不死心。人生可能就需要这样的一股子劲，逼着自己，向前冲，管他对与错，管他是与非，管他谁是谁，可能多年之后，南墙撞到了，再不会出现，黄河干了，再不会出现，绝望不见了，成了美好的回忆。但这一起，均是可能否。</p></blockquote></div><div class="tab-pane" id="20181009-4"><blockquote><p>可能我撞了南墙才会回头吧<br>可能我见了黄河才会死心吧<br>可能我偏要一条路走到黑吧<br>可能我还没遇见，那个他吧</p></blockquote><blockquote><p>春天的风 能否吹来夏天的雨<br>秋天的月 能否照亮冬天的雪<br>夜空的星 能否落向晨曦的海<br>山间的泉 能否遇上南飞的雁<br>断掉的弦 能否扯破自缚的茧<br>熄灭的火 能否烧光残留的念<br>梦中的云 能否化作熟悉的脸<br>前世的劫 能否换来今生的缘</p></blockquote><blockquote><p>能否早一点 看透命运的伏线<br>能否慢一点 挥霍有限的时间<br>能否早一点 相信年少的誓言<br>能否慢一点 感受岁月的缱绻</p></blockquote></div></div></div><h1 id="20181017"><a href="#20181017" class="headerlink" title="[20181017]"></a>[20181017]</h1><div class="tabs" id="20181017"><ul class="nav-tabs"><li class="tab active"><a href="#20181017-1">歌名</a></li><li class="tab"><a href="#20181017-2">歌手</a></li><li class="tab"><a href="#20181017-3">推荐理由</a></li><li class="tab"><a href="#20181017-4">优美歌词摘抄</a></li></ul><div class="tab-content"><div class="tab-pane active" id="20181017-1"><div class="note default"><blockquote><br><p>倾尽天下 <a href="http://music.163.com/m/song?id=27571867&amp;userid=612218245" target="_blank" rel="noopener">链接</a></p><br></blockquote></div></div><div class="tab-pane" id="20181017-2"><div class="note default"><blockquote><br><p>河图</p><br></blockquote></div></div><div class="tab-pane" id="20181017-3"><blockquote><p>急速的开头可能只是衬托。而后的歌调婉转，歌词非要细听方才懂得。初不觉歌有如何，遂查背景，了解背景后，再回首听这首歌，格调完全不同。歌词讲述了周朝开国皇帝白炎、前朝敬帝与前朝最后一位贵妃朱砂的爱恨情仇。亦是追求爱情的典例。</p></blockquote></div><div class="tab-pane" id="20181017-4"><blockquote><p>七重纱衣 血溅了白纱<br>兵临城下六军不发<br>谁知再见已是 生死无话</p></blockquote><blockquote><p>明月照亮天涯<br>最后谁又 得到了蒹葭<br>江山嘶鸣战马<br>怀抱中那 寂静的喧哗</p></blockquote><blockquote><p>回到那一刹那<br>岁月无声也让人害怕<br>枯藤长出枝桠<br>原来时光已翩然轻擦</p></blockquote></div></div></div><h1 id="20181020"><a href="#20181020" class="headerlink" title="[20181020]"></a>[20181020]</h1><div class="tabs" id="20181020"><ul class="nav-tabs"><li class="tab active"><a href="#20181020-1">歌名</a></li><li class="tab"><a href="#20181020-2">歌手</a></li><li class="tab"><a href="#20181020-3">推荐理由</a></li><li class="tab"><a href="#20181020-4">优美歌词摘抄</a></li></ul><div class="tab-content"><div class="tab-pane active" id="20181020-1"><div class="note default"><blockquote><br><p>年少有为 <a href="http://music.163.com/m/song?id=1293886117&amp;userid=612218245" target="_blank" rel="noopener">链接</a></p><br></blockquote></div></div><div class="tab-pane" id="20181020-2"><div class="note default"><blockquote><br><p>李荣浩</p><br></blockquote></div></div><div class="tab-pane" id="20181020-3"><blockquote><p>李荣浩留给我的不止迷人的眼睛，还有那真切的痛感。听歌至今，也仅知他歌声的言语，带着几分自嘲，带着几分玩笑，带着几分不愿向生活妥协的倔强。“假如我年少有为不自卑，懂得什么是珍贵”，“加入我年少有为知进退，才不会让你替我受罪”，既是爱情，又是生活。能把生活写成歌词的人，又有几个。</p></blockquote></div><div class="tab-pane" id="20181020-4"><blockquote><p>假如我年少有为不自卑<br>懂得什么是珍贵<br>那些美梦<br>没给你 我一生有愧<br>假如我年少有为知进退<br>才不会让你替我受罪<br>婚礼上多喝几杯<br>和你现在那位</p></blockquote></div></div></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;20181003&quot;&gt;&lt;a href=&quot;#20181003&quot; class=&quot;headerlink&quot; title=&quot;[20181003]&quot;&gt;&lt;/a&gt;[20181003]&lt;/h1&gt;&lt;div class=&quot;tabs&quot; id=&quot;20181003&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;li class=&quot;tab active&quot;&gt;&lt;a href=&quot;#20181003-1&quot;&gt;歌名&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#20181003-2&quot;&gt;歌手&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#20181003-3&quot;&gt;推荐理由&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#20181003-4&quot;&gt;优美歌词摘抄&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;tab-content&quot;&gt;&lt;div class=&quot;tab-pane active&quot; id=&quot;20181003-1&quot;&gt;&lt;div class=&quot;note default&quot;&gt;&lt;blockquote&gt;&lt;br&gt;&lt;p&gt;生命中的时光 &lt;a href=&quot;http://music.163.com/m/song?id=500913929&amp;amp;userid=612218245&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;/blockquote&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;20181003-2&quot;&gt;&lt;div class=&quot;note default&quot;&gt;&lt;blockquote&gt;&lt;br&gt;&lt;p&gt;齐一&lt;/p&gt;&lt;br&gt;&lt;/blockquote&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;20181003-3&quot;&gt;&lt;blockquote&gt;
-&lt;p&gt;齐一不便多说，第一次听到他的声音，是那首《这个年纪》，苍翠有力，活泼俏皮，当时没少单曲循环。今日首推这首歌，作词作曲皆为上品，“想要把自己活成一场梦，一首歌一部电影。”已经折服了我。少不了励志词语，”每天醒来的时候照照镜子，用一个微笑补偿自己”。让人不禁感叹，生命中那些难熬的时光，终将会在某一天找到所有孤独的意义。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;&lt;div class=&quot;tab-pane&quot; id=&quot;20181003-4&quot;&gt;&lt;blockquote&gt;
-&lt;p&gt;在只有凌晨才不会太拥挤的城市&lt;br&gt;我披星戴月独自穿行&lt;/p&gt;
-&lt;p&gt;想要把自己活成一场梦&lt;br&gt;一首歌一部电影&lt;br&gt;就算会半梦半醒就算压（押）不上韵&lt;br&gt;却还是期待所有故事结局&lt;/p&gt;
-&lt;p&gt;我会在每天醒来的时候照照镜子&lt;br&gt;用一个微笑补偿自己&lt;br&gt;生活太不容易却仍不甘心&lt;br&gt;问问自己是否拼尽全力&lt;/p&gt;
-&lt;p&gt;我也佩服我的勇气&lt;br&gt;也心疼所有孤独的意义&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="歌单" scheme="http://zhihening.me/categories/%E6%AD%8C%E5%8D%95/"/>
-    
-    
-      <category term="歌单" scheme="http://zhihening.me/tags/%E6%AD%8C%E5%8D%95/"/>
     
   </entry>
   
@@ -312,67 +323,6 @@
     
     
       <category term="题解~" scheme="http://zhihening.me/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习（一）：KNN算法的实现</title>
-    <link href="http://zhihening.me/2018/07/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AKNN%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://zhihening.me/2018/07/30/机器学习（一）：KNN算法的实现/</id>
-    <published>2018-07-30T07:45:44.000Z</published>
-    <updated>2018-10-03T12:00:29.383Z</updated>
-    
-    <content type="html"><![CDATA[<p>##描述<br><a href="https://baike.baidu.com/item/k%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/9512781?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p><p>##算法实现原理：</p><blockquote><p>1.计算已知类别数据集中的点与当前点之间的距离;  </p></blockquote><blockquote><p>2.按照距离递增次序排序；  </p></blockquote><blockquote><p>3.选取与当前点距离最小的k个点；  </p></blockquote><blockquote><p>4.确定前k个点所在类别的出现频率； </p></blockquote><blockquote><p>5.返回前k个点所出现频率最高的类别作为当前点的预测分类。<br><a id="more"></a></p></blockquote><p>##算法实现：  </p><p>###数据集的建立及python代码的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">from numpy import *</span><br><span class="line">import operator</span><br><span class="line"></span><br><span class="line">#训练集</span><br><span class="line">def creatDataSet():</span><br><span class="line">    group = array([[1.0,1.1],[1.0,1.0],[0,0],[0,0.1]])</span><br><span class="line">    labels = [&apos;A&apos;,&apos;A&apos;,&apos;B&apos;,&apos;B&apos;]</span><br><span class="line">    return group, labels</span><br></pre></td></tr></table></figure></p><p>####运行结果：</p><blockquote><p>如下图：<br><img src="http://wx4.sinaimg.cn/mw690/007bXaCZgy1ftrycmz6mej30c205m0sp.jpg" alt="训练集运行结果"></p></blockquote><p>###KNN算法的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#KNN分类</span><br><span class="line"># inX 用于分类的数据（即测试集）</span><br><span class="line"># dataSet 用于训练的数据（即测试集）</span><br><span class="line"># labels 分类的标签</span><br><span class="line"># k KNN算法中 K 的值</span><br><span class="line">def classify(inX,dataSet,labels,k):</span><br><span class="line"></span><br><span class="line">    #计算距离</span><br><span class="line"></span><br><span class="line">    dataSetSize = dataSet.shape[0] #返回dataSet的行数</span><br><span class="line">    diffMat = np.tile(inX, (dataSetSize,1)) - dataSet #inX 在（行向量方向上重复，列向量方向上重复）次数</span><br><span class="line">    sqDiffMat = diffMat**2 #二维特征相减后平方</span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=1) #相减平方再相加</span><br><span class="line">    distances = sqDistances**0.5 #再开方</span><br><span class="line"></span><br><span class="line">    #排序（从小到大）</span><br><span class="line">    sortedDistIndices = distances.argsort() #排序并返回下标</span><br><span class="line"></span><br><span class="line">    classCount = &#123;&#125; #定义一个记录类别次数的字典</span><br><span class="line"></span><br><span class="line">    for i in range(k):</span><br><span class="line">        voteIlabel = labels[sortedDistIndices[i]] #取出前K个元素的类别</span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 #计算类别的次数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># key=operator.itemgetter(1)根据字典的值进行排序</span><br><span class="line"># key=operator.itemgetter(0)根据字典的键进行排序</span><br><span class="line"># reverse降序排序字典</span><br><span class="line"></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(1),reverse=True) # 降序排序</span><br><span class="line">    return sortedClassCount[0][0]</span><br></pre></td></tr></table></figure></p><p>####测试结果：<br><img src="http://wx3.sinaimg.cn/mw690/007bXaCZgy1ftryb8ssjmj30bt03uwea.jpg" alt="测试结果"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##描述&lt;br&gt;&lt;a href=&quot;https://baike.baidu.com/item/k%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/9512781?fr=aladdin&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;百度百科&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;##算法实现原理：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1.计算已知类别数据集中的点与当前点之间的距离;  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;2.按照距离递增次序排序；  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;3.选取与当前点距离最小的k个点；  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;4.确定前k个点所在类别的出现频率； &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;5.返回前k个点所出现频率最高的类别作为当前点的预测分类。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://zhihening.me/categories/python/"/>
-    
-    
-      <category term="机器学习" scheme="http://zhihening.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Counterfeit Dollar(枚举)</title>
-    <link href="http://zhihening.me/2018/07/07/Counterfeit-Dollar-%E6%9E%9A%E4%B8%BE/"/>
-    <id>http://zhihening.me/2018/07/07/Counterfeit-Dollar-枚举/</id>
-    <published>2018-07-07T04:49:43.000Z</published>
-    <updated>2018-10-03T12:01:29.500Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p><a href="http://poj.org/problem?id=1013" target="_blank" rel="noopener">传送门</a></p><blockquote><p>Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even though its color and size make it indistinguishable from the real silver dollars. The counterfeit coin has a different weight from the other coins but Sally does not know if it is heavier or lighter than the real coins.<br><a id="more"></a><br>Happily, Sally has a friend who loans her a very accurate balance scale. The friend will permit Sally three weighings to find the counterfeit coin. For instance, if Sally weighs two coins against each other and the scales balance then she knows these two coins are true. Now if Sally weighs<br>one of the true coins against a third coin and the scales do not balance then Sally knows the third coin is counterfeit and she can tell whether it is light or heavy depending on whether the balance on which it is placed goes up or down, respectively.<br>By choosing her weighings carefully, Sally is able to ensure that she will find the counterfeit coin with exactly three weighings.</p></blockquote><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><blockquote><p>The first line of input is an integer n (n &gt; 0) specifying the number of cases to follow. Each case consists of three lines of input, one for each weighing. Sally has identified each of the coins with the letters A–L. Information on a weighing will be given by two strings of letters and then one of the words “up”, “down”, or “even”. The first string of letters will represent the coins on the left balance; the second string, the coins on the right balance. (Sally will always place the same number of coins on the right balance as on the left balance.) The word in the third position will tell whether the right side of the balance goes up, down, or remains even.</p></blockquote><h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><blockquote><p>For each case, the output will identify the counterfeit coin by its letter and tell whether it is heavy or light. The solution will always be uniquely determined.</p></blockquote><h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">input:</span><br><span class="line"></span><br><span class="line">1 </span><br><span class="line">ABCD EFGH even </span><br><span class="line">ABCI EFJK up </span><br><span class="line">ABIJ EFGH even </span><br><span class="line"></span><br><span class="line">output:</span><br><span class="line"></span><br><span class="line">K is the counterfeit coin and it is light.</span><br></pre></td></tr></table></figure><h2 id="题意理解-思路"><a href="#题意理解-思路" class="headerlink" title="题意理解+思路"></a>题意理解+思路</h2><h3 id="题意理解"><a href="#题意理解" class="headerlink" title="题意理解"></a>题意理解</h3><blockquote><p>题意说一共有12个硬币，其中有一个是假币，不知道是重还是轻，一共可以称量3次来寻找假币。输入第一行是n（n&gt;0），指需要测试的案例数。每个案例由3行输入，用A-L来表示硬币。第一串字母代表天平左边，第二串代表天平右边，第三串字母由 even up down 来分别表示保持平衡、天平右侧上升、天平右侧下降。要求找出假币所代表的的字母并告知是重还是轻。</p></blockquote><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote><p>开12个数组代表A-L，并赋初值为0，若天平平衡，则将左右的所有字母对应的数组都赋值为一个固定的数，若不平衡，则首先除去固定数的数组（数字固定，表示是真币）然后将重的一侧加一，轻的一侧减一。最后遍历数组寻找出绝对值最大的数就是假币，因为这个数字是被怀疑次数最多的。如果除去绝对值为正，则为重，否则为轻。 </p></blockquote><h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;   </span><br><span class="line">int n,k,i,t,len,max;</span><br><span class="line">    char s1[13],s2[13],temp[10];</span><br><span class="line">    int a[12];</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    while(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        memset(a,0,sizeof(a));</span><br><span class="line">        for(t=0;t&lt;3;t++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(&quot;%s%s%s&quot;,s1,s2,temp);</span><br><span class="line">            len=strlen(s1);              //两边个数肯定相等，所以两边长度也一样,不能只看样例便觉得一定是4而忽略这一步，否则会 WA</span><br><span class="line">            if(strcmp(temp,&quot;even&quot;)==0)</span><br><span class="line">             &#123;</span><br><span class="line">                 for(i=0;i&lt;len;++i)</span><br><span class="line">                &#123;</span><br><span class="line">                     a[s1[i]-&apos;A&apos;]=10;  //说明两边都为真，将标记数组置为10（10为自己设置的固定的数，但不能过小否则会错。）</span><br><span class="line">                     a[s2[i]-&apos;A&apos;]=10;</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">             else if(strcmp(temp,&quot;up&quot;)==0)//说明左边重</span><br><span class="line">             &#123;</span><br><span class="line">                 for(i=0;i&lt;len;++i)</span><br><span class="line">                 &#123;</span><br><span class="line">                     if(a[s1[i]-&apos;A&apos;]!=10)</span><br><span class="line">                         ++a[s1[i]-&apos;A&apos;];  //左边加一</span><br><span class="line">                     if(a[s2[i]-&apos;A&apos;]!=10)</span><br><span class="line">                         --a[s2[i]-&apos;A&apos;];  //右边减一</span><br><span class="line"> </span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">             else</span><br><span class="line">             &#123;</span><br><span class="line">                 for(i=0;i&lt;len;++i)      //说明右边重</span><br><span class="line">                 &#123;</span><br><span class="line">                     if(a[s1[i]-&apos;A&apos;]!=10)</span><br><span class="line">                         --a[s1[i]-&apos;A&apos;];  //左边减一</span><br><span class="line">                     if(a[s2[i]-&apos;A&apos;]!=10)</span><br><span class="line">                         ++a[s2[i]-&apos;A&apos;];  //右边加一</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         max=0;</span><br><span class="line">         k=0;</span><br><span class="line">         for(i=0;i&lt;12;++i)</span><br><span class="line">         &#123;</span><br><span class="line">             if(a[i]==10)</span><br><span class="line">                 continue;</span><br><span class="line">             if(max&lt;=abs(a[i]))</span><br><span class="line">             &#123;</span><br><span class="line">                 max=abs(a[i]);</span><br><span class="line">                 k=i;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         if(a[k]&gt;0) //去绝对值后的符号决定轻重。</span><br><span class="line">             printf(&quot;%c is the counterfeit coin and it is heavy.\n&quot;,&apos;A&apos;+k);</span><br><span class="line">         else</span><br><span class="line">             printf(&quot;%c is the counterfeit coin and it is light.\n&quot;,&apos;A&apos;+k);</span><br><span class="line">     &#125;</span><br><span class="line">     return 0;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://poj.org/problem?id=1013&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even though its color and size make it indistinguishable from the real silver dollars. The counterfeit coin has a different weight from the other coins but Sally does not know if it is heavier or lighter than the real coins.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="http://zhihening.me/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="枚举" scheme="http://zhihening.me/tags/%E6%9E%9A%E4%B8%BE/"/>
     
   </entry>
   

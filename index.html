@@ -347,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2019/08/06/hello2019/">
+    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2020/08/14/Scrapy框架学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hezhing">
@@ -366,20 +366,13 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/hello2019/" itemprop="url">hello2019</a></h1>
+                <a class="post-title-link" href="/2020/08/14/Scrapy框架学习/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
 		 
 		 
-			<span class="post-updated">
-				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2019-08-08T09:56:52+08:00" content="2019-08-08">
-					2019-08-08
-				</time>
-			</span>
-		
 
             
               <span class="post-meta-item-icon">
@@ -387,16 +380,12 @@
               </span>
 
               
-            <i class="fa fa-thumb-tack"></i>
-            <font color=7D26CD>置顶</font>
-            <span class="post-meta-divider">|</span>
-          
 
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T17:33:18+08:00">
-                2019-08-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-14T13:58:18+08:00">
+                2020-08-14
               </time>
             
 
@@ -427,7 +416,197 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  65
+                  476
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-1安装scrapy"><a href="#1-1安装scrapy" class="headerlink" title="1.1安装scrapy"></a>1.1安装scrapy</h3><p>这个过程是异常艰辛的。如果你没有报错的话，那么恭喜你逃过一劫，如果像我一样满屏错，建议百度食用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
+<h3 id="1-2新建项目"><a href="#1-2新建项目" class="headerlink" title="1.2新建项目"></a>1.2新建项目</h3><p>在当前目录下创建一个新的项目文件，与Django类似，在目录下打开cmd输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject 项目名称</span><br></pre></td></tr></table></figure>
+<h3 id="1-3运行爬虫应用"><a href="#1-3运行爬虫应用" class="headerlink" title="1.3运行爬虫应用"></a>1.3运行爬虫应用</h3><p>运行所写的爬虫</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl 爬虫应用名称</span><br></pre></td></tr></table></figure>
+<h3 id="yield-Request用法"><a href="#yield-Request用法" class="headerlink" title="yield Request用法"></a>yield Request用法</h3><p>yield Request（url，callback = self.get_name ，meta = {‘name’:novelname,’url’:novelurl}）</p>
+<p>意思是请求新的url，callback跟的是回调函数，指需要用get_name函数来处理这个返回值。返回值会以参数的形式传递给所调用的函数。</p>
+<p>meta是Scrapy中传递额外数据的方法，传递为字典形式。</p>
+<h3 id="提取一段文字中的链接及汉字"><a href="#提取一段文字中的链接及汉字" class="headerlink" title="提取一段文字中的链接及汉字"></a>提取一段文字中的链接及汉字</h3><p>在写爬虫，遇到下面一段，需要提取其中的url和名字，使用正则匹配的方式。正则如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 提取汉字</span><br><span class="line">novelname = re.findall(r&apos;[\u4e00-\u9fa5]+&apos;,str(tds))</span><br><span class="line"># 提取url</span><br><span class="line">novelurl = re.findall(r&apos;&lt;a href=&quot;([a-zA-z]+://[^\s]*)&quot;&apos;, str(tds))</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562665485487.png" alt="1562665485487">.</p>
+<h3 id="SQl语法，创建表和创建表名及运行。"><a href="#SQl语法，创建表和创建表名及运行。" class="headerlink" title="SQl语法，创建表和创建表名及运行。"></a>SQl语法，创建表和创建表名及运行。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `dd_name`;</span><br><span class="line">CREATE TABLE `dd_name` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `xs_name` varchar(255) DEFAULT NULL,</span><br><span class="line">  `xs_author` varchar(255) DEFAULT NULL,</span><br><span class="line">  `category` varchar(255) DEFAULT NULL,</span><br><span class="line">  `name_id` varchar(255) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4;</span><br></pre></td></tr></table></figure>
+<p>上面是sql语法，执行就会创建一个名为‘dd_name’的表，其中包括‘id’,’xs_name’,’xs_author’,’category’,’name_id’等表头。</p>
+<p>上面语法可以在Nabicat中使用，使用步骤如下：</p>
+<p>1.点击查询</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850026253.png" alt="1562850026253"></p>
+<p>2.新建查询</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850047875.png" alt="1562850047875"></p>
+<p>3.把上面的语句粘贴进去，然后点击运行，即可。</p>
+<h2 id="框架中的settings设置"><a href="#框架中的settings设置" class="headerlink" title="框架中的settings设置"></a>框架中的settings设置</h2><p>1.用来设置数据库的内容：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850199218.png" alt="1562850199218"></p>
+<p>2.防止重复爬取某一页面：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850276151.png" alt="1562850276151"></p>
+<p>3.爬虫爬取的执行函数及其优先级，数字越低优先级越高：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562850379559.png" alt="1562850379559"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+</div>
+
+<div>
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2020/08/14/PyQt5导入找不到指定模块错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hezhing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hezhing's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/14/PyQt5导入找不到指定模块错误/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		 
+		 
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+
+              
+
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-14T13:58:18+08:00">
+                2020-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  181
                 </span>
               
 
@@ -466,7 +645,592 @@
       
         
           
-            <p>本网站自2018年6月23日运行以来，共计推送11篇文章，由于种种原因（主要是我太懒），一直未曾更新。但经过深刻反思，决定重新拾起博客，开始更新。欢迎各位大佬指正。</p>
+            <p><strong>问题描述：</strong>python3.5.2(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块</p>
+<p><strong>一、环境：</strong></p>
+<p>window10（64bit）+anaconda +python3.5 + vsCode</p>
+<p><strong>二、问题描述</strong></p>
+<p>首先安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5</span><br></pre></td></tr></table></figure>
+<p>安装pyqt5-tools</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyqt5-tools</span><br></pre></td></tr></table></figure>
+<p>测试是否能使用PyQt5</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QApplication,QWidget</span><br></pre></td></tr></table></figure>
+<p>出现以下现象</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\image-20200109180341507.png" alt="image-20200109180341507"></p>
+<p><strong>三、原因 </strong></p>
+<p>通过Anaconda 安装的Python缺少了python3.dll。</p>
+<p><strong>四、解决方案</strong></p>
+<p>可以通过去 <a href="https://www.python.org/" target="_blank" rel="noopener">python.org</a>下载所需版本的python安装包并安装，然后从安装目录中拷贝python3.dll文件，粘贴到Anaconda中对应python版本环境的安装目录下。找不到的话：<a href="https://pan.baidu.com/s/1AmVLsu7TkiIib3bSISENkQ" target="_blank" rel="noopener">百度云</a></p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\image-20200109180537282.png" alt="image-20200109180537282"></p>
+<p>然后就可以运行了。</p>
+<p>参考自：<a href="https://blog.csdn.net/Ltime/article/details/71403947" target="_blank" rel="noopener">python3.6.0(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+</div>
+
+<div>
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2020/08/14/Anacond学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hezhing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hezhing's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/14/Anacond学习/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		 
+		 
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+
+              
+
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-14T13:58:18+08:00">
+                2020-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  284
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Anaconda命令"><a href="#Anaconda命令" class="headerlink" title="Anaconda命令"></a>Anaconda命令</h2><p>创建一个python3.6版本的环境。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --name [虚拟环境名] python=3.6</span><br></pre></td></tr></table></figure>
+<p>安装好以后使用activate激活/取消激活环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">activate [虚拟环境名] #for windows</span><br><span class="line">deactivate [虚拟环境名]</span><br><span class="line"></span><br><span class="line">source activate [虚拟环境名] # for Linux &amp; Mac</span><br></pre></td></tr></table></figure>
+<p>删除环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name [虚拟环境名] --all</span><br></pre></td></tr></table></figure>
+<p>查看环境列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda info --env</span><br><span class="line">或者下面这个：</span><br><span class="line">conda env list</span><br></pre></td></tr></table></figure>
+<p>在当前环境下安装anaconda包的集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda install anaconda</span><br><span class="line">或者在安装创建环境的时候运行如下命令：</span><br><span class="line">conda create -n [虚拟环境名] python=3.6 anaconda</span><br></pre></td></tr></table></figure>
+<h2 id="Anaconda安装新环境报错"><a href="#Anaconda安装新环境报错" class="headerlink" title="Anaconda安装新环境报错"></a>Anaconda安装新环境报错</h2><p>安装新环境的过程中报错如下：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562048646425.png" alt="1562048646425"></p>
+<p>把C:\Users\Hezhing\.condarc文件中的信息换成下面这个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line"> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line"> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">show_channel_urls: true</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562049922152.png" alt="1562049922152"></p>
+<p>然后再执行代码就可以了。</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562049946112.png" alt="1562049946112"></p>
+<h2 id="打不开Anaconda-Navigator"><a href="#打不开Anaconda-Navigator" class="headerlink" title="打不开Anaconda-Navigator"></a>打不开Anaconda-Navigator</h2><p>右键，以管理员方式打开。</p>
+<h2 id="Anaconda环境安装时报错"><a href="#Anaconda环境安装时报错" class="headerlink" title="Anaconda环境安装时报错"></a>Anaconda环境安装时报错</h2><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562050911179.png" alt="1562050911179"></p>
+<p>百度说，是因为有个包没安装成功，再运行一遍就好，再运行一遍后，显示安装成功。</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562050955320.png" alt="1562050955320"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+</div>
+
+<div>
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2020/08/14/学习新知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hezhing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hezhing's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/14/学习新知识/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		 
+		 
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+
+              
+
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-14T13:58:18+08:00">
+                2020-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  449
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="urljoin函数："><a href="#urljoin函数：" class="headerlink" title="urljoin函数："></a>urljoin函数：</h2><p>​        需要导入urllib包，用法：urllib.parse.urljoin(url1,url2)</p>
+<p>​        说明：拼接两个url的绝对路径</p>
+<h2 id="yield用法："><a href="#yield用法：" class="headerlink" title="yield用法："></a>yield用法：</h2><p>​        yield 是一个类似 return 的关键字，迭代一次遇到yield时就返回yield后面(右边)的值</p>
+<p>​        注：下一次迭代时，从上一次迭代遇到的yield后面的代码(下一行)开始执行。return 的作用：如果没有 return，则默认执行至函数完毕，相当于每次迭代都返回一次。</p>
+<h2 id="批量读取json格式文件"><a href="#批量读取json格式文件" class="headerlink" title="批量读取json格式文件"></a>批量读取json格式文件</h2><p>​        前景摘要：要做可视化，之前做热力图分析时，把所有的地点都做成了经纬度坐标的形式，但是在读取的时候遇到了问题。格式是下面这样的：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1561967828116.png" alt="1561967828116"></p>
+<p>​        使用json中的load或者loads读都有报错，网上百度，我使用json.load()报的错要使用json.loads()，使用json.loads()报的错要使用json.load()。</p>
+<p>​        最后实在没有办法，我先把json转成txt，然后逐行读取，使用json里面的dump把每一行都保存成一个json文件，然后在逐个load。最后取数据的时候跟我说str不行，要用int型，然后我直接使用split(‘,’)把整个str字符串分开，然后取出。代码及效果如下图：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1561968335613.png" alt="1561968335613"></p>
+<h2 id="pyecharts环境配置问题"><a href="#pyecharts环境配置问题" class="headerlink" title="pyecharts环境配置问题"></a>pyecharts环境配置问题</h2><p>参考链接：</p>
+<p><a href="https://blog.csdn.net/zqs305082800/article/details/84581299" target="_blank" rel="noopener">pyechart 与jupyter 交互式</a></p>
+<h2 id="Ubuntu使用sudo-apt-get-install-xxx-时报错"><a href="#Ubuntu使用sudo-apt-get-install-xxx-时报错" class="headerlink" title="Ubuntu使用sudo apt-get install xxx 时报错"></a>Ubuntu使用sudo apt-get install xxx 时报错</h2><p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562932876173.png" alt="1562932876173"></p>
+<p>这个问题很可能是有另外一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因除了真正用另一个终端安装程序外，很可能是上次运行安装或更新没有正常完成导致，可以输入以下命令尝试解决。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/cache/apt/archives/lock</span><br><span class="line">sudo rm /var/lib/dpkg/lock</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562932923096.png" alt="1562932923096"></p>
+<p>完美解决。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+</div>
+
+<div>
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2020/08/14/VScode输出中文编码错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hezhing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hezhing's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/14/VScode输出中文编码错误/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		 
+		 
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+
+              
+
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-14T13:58:18+08:00">
+                2020-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  735
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="VScode输出中文编码错误"><a href="#VScode输出中文编码错误" class="headerlink" title="VScode输出中文编码错误"></a>VScode输出中文编码错误</h2><p>在写爬虫的时候，在终端输出一个网页的介绍时，发现报错，出现中文乱码，试了网上的很多办法，有添加环境变量，有修改文件等等，但都不起作用，最后在网上找了一个办法，即：先输入“chcp 65001” 再执行代码。</p>
+<p>具体原因我通过网上查找发现</p>
+<p>输入chcp就可以查看活动代码页<br>即可以通过chcp命令查看cmd的编码设置，GBK2312的代码页编号是936，然后改成utf-8的编码即可而utf-8的代码页编号是  65001</p>
+<p>但这种办法每次运行都要输入，所以我又寻找一劳永逸的办法。即：在settings.json文件中添加下面这行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;terminal.integrated.shellArgs.windows&quot;: [&quot;/K&quot;, &quot;chcp 65001&quot;]</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;terminal.integrated.shellArgs.windows&quot;: [&quot;-NoExit&quot;, &quot;/c&quot;, &quot;chcp.com 65001&quot;]</span><br></pre></td></tr></table></figure>
+<h2 id="VS2013运行时出现“无法查找或打开PDB文件”"><a href="#VS2013运行时出现“无法查找或打开PDB文件”" class="headerlink" title="VS2013运行时出现“无法查找或打开PDB文件”"></a>VS2013运行时出现“无法查找或打开PDB文件”</h2><p>（1）说明：使用VS编译程序时出现“无法查找或打开PDB文件”的提示，并且程序无法运行，却又没报错。</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562119680200.png" alt="1562119680200"></p>
+<p>（2）原因：并非代码错误，而是编辑器设置的问题，改一下就好。</p>
+<p>（3）解决办法：</p>
+<p>1.选择菜单栏中“调试 –&gt; 选项”。</p>
+<p>2.在“选项”中，选择“调试 –&gt; 常规”，在右侧选项栏中勾选“”“启用源服务器支持”（包含的 3 个子选项不用勾选），此时会弹出一个安全警报框，选择“是”即可</p>
+<p>3.然后在“选项”对话框中，选择“调试 –&gt; 符号”，在右侧选项栏中勾选“Microsoft符号服务器”，此时会弹出一个提示对话框，点击“确定”即可。同时，对于缓存符号的目录选择“C:\Users”即可。</p>
+<p>4.确定之后，重新运行你的程序，首次运行时，由于编译器会加载所有动态链接库的pdb文件，可能会等到几秒钟。程序运行后，之前输出窗口中的“无法查找或打开pdb文件”的提示不见了，如图：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562116281686.png" alt="1562116281686"></p>
+<h2 id="VS2013在编译SeetFace时报错"><a href="#VS2013在编译SeetFace时报错" class="headerlink" title="VS2013在编译SeetFace时报错"></a>VS2013在编译SeetFace时报错</h2><p>（1）说明：在按照网上的配置完成后，在编译的时候出现报错“error C1083 无法打开 “opencv2/highgui/highgui.hpp””</p>
+<p>（2）原因：使用的是x64的平台，却在属性管理器中配置的是win32的环境。</p>
+<p>解决办法：</p>
+<p>把win32改成x64。</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562121136456.png" alt="1562121136456"></p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562121168355.png" alt="1562121168355"></p>
+<h2 id="VS2013-OpenCV2411-SeetaFace环境配置"><a href="#VS2013-OpenCV2411-SeetaFace环境配置" class="headerlink" title="VS2013+OpenCV2411+SeetaFace环境配置"></a>VS2013+OpenCV2411+SeetaFace环境配置</h2><p>详见链接</p>
+<p><a href="https://blog.csdn.net/u014349384/article/details/76408114" target="_blank" rel="noopener">VS2013+OpenCV2411+SeetaFace环境配置</a></p>
+<h2 id="VS2013在编辑SeetaFace生成FaceAilgnment-lib时报错"><a href="#VS2013在编辑SeetaFace生成FaceAilgnment-lib时报错" class="headerlink" title="VS2013在编辑SeetaFace生成FaceAilgnment.lib时报错"></a>VS2013在编辑SeetaFace生成FaceAilgnment.lib时报错</h2><p>报错信息如下：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586109764.png" alt="1562586109764"></p>
+<p>解决方案：</p>
+<p>点击项目属性–&gt;在C/C++中的预处理器中编辑预处理器定义–&gt;添加“_CRT_SECURE_NO_WARNINGS”–&gt;重新生成</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586142330.png" alt="1562586142330"></p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586168586.png" alt="1562586168586"></p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586192361.png" alt="1562586192361"></p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562586220082.png" alt="1562586220082"></p>
+<h2 id="VS2013编译FaceAilgnment报错：msvcr120-dll"><a href="#VS2013编译FaceAilgnment报错：msvcr120-dll" class="headerlink" title="VS2013编译FaceAilgnment报错：msvcr120.dll"></a>VS2013编译FaceAilgnment报错：msvcr120.dll</h2><p>报错如下：</p>
+<p><img src="C:\Users\Hezhing\AppData\Roaming\Typora\typora-user-images\1562588193761.png" alt="1562588193761"></p>
+<p>解决办法： 把这个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#ifdef _WIN32</span><br><span class="line">std::string DATA_DIR = &quot;../../data/&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;../../model/&quot;;</span><br><span class="line">#else</span><br><span class="line">std::string DATA_DIR = &quot;./data/&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;./model/&quot;;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>替换成这个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#ifdef _WIN32</span><br><span class="line">std::string DATA_DIR = &quot;\\data\\&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;\\\model\\&quot;;</span><br><span class="line">#else</span><br><span class="line">std::string DATA_DIR = &quot;\\data\\&quot;;</span><br><span class="line">std::string MODEL_DIR = &quot;\\model\\&quot;;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1299,182 +2063,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2019/08/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hezhing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hezhing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/06/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-		 
-		 
-			<span class="post-updated">
-				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2019-08-06T17:32:54+08:00" content="2019-08-06">
-					2019-08-06
-				</time>
-			</span>
-		
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-
-              
-
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T17:05:02+08:00">
-                2019-08-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  78
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/06/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-<div>
-  
-</div>
-
-<div>
-      
-</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zhihening.me/2018/10/21/Python安装mysqlclinent报错及解决/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1657,589 +2245,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2018/10/16/Django/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hezhing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hezhing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/16/Django/" itemprop="url">基于Python Django框架的文档查找系统</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-		 
-		 
-			<span class="post-updated">
-				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2018-10-21T00:03:11+08:00" content="2018-10-21">
-					2018-10-21
-				</time>
-			</span>
-		
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-
-              
-
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T19:56:18+08:00">
-                2018-10-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/实验室项目开发/" itemprop="url" rel="index">
-                    <span itemprop="name">实验室项目开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  241
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Django项目的创建和运行。"><a href="#Django项目的创建和运行。" class="headerlink" title="Django项目的创建和运行。"></a>Django项目的创建和运行。</h1><h2 id="cmd运行命令"><a href="#cmd运行命令" class="headerlink" title="cmd运行命令"></a>cmd运行命令</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/16/Django/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-<div>
-  
-</div>
-
-<div>
-      
-</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2018/10/15/Ubuntu16-04-iso文件下载及虚拟机安装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hezhing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hezhing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/15/Ubuntu16-04-iso文件下载及虚拟机安装/" itemprop="url">Ubuntu16.04 iso文件下载及虚拟机安装</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-		 
-		 
-			<span class="post-updated">
-				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2018-10-21T16:04:01+08:00" content="2018-10-21">
-					2018-10-21
-				</time>
-			</span>
-		
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-
-              
-
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T22:18:03+08:00">
-                2018-10-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  81
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#下载<br><a href="http://mirror.pnl.gov/releases/xenial/" target="_blank" rel="noopener">下载地址</a><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/15/Ubuntu16-04-iso文件下载及虚拟机安装/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-<div>
-  
-</div>
-
-<div>
-      
-</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhihening.me/2018/10/03/歌单推荐/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hezhing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hezhing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/03/歌单推荐/" itemprop="url">歌单推荐</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-		 
-		 
-			<span class="post-updated">
-				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2018-10-20T23:46:03+08:00" content="2018-10-20">
-					2018-10-20
-				</time>
-			</span>
-		
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-
-              
-
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T20:00:06+08:00">
-                2018-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/歌单/" itemprop="url" rel="index">
-                    <span itemprop="name">歌单</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,485
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="20181003"><a href="#20181003" class="headerlink" title="[20181003]"></a>[20181003]</h1><div class="tabs" id="20181003"><ul class="nav-tabs"><li class="tab active"><a href="#20181003-1">歌名</a></li><li class="tab"><a href="#20181003-2">歌手</a></li><li class="tab"><a href="#20181003-3">推荐理由</a></li><li class="tab"><a href="#20181003-4">优美歌词摘抄</a></li></ul><div class="tab-content"><div class="tab-pane active" id="20181003-1"><div class="note default"><blockquote><br><p>生命中的时光 <a href="http://music.163.com/m/song?id=500913929&amp;userid=612218245" target="_blank" rel="noopener">链接</a></p><br></blockquote></div>
-</div><div class="tab-pane" id="20181003-2"><div class="note default"><blockquote><br><p>齐一</p><br></blockquote></div>
-</div><div class="tab-pane" id="20181003-3"><blockquote>
-<p>齐一不便多说，第一次听到他的声音，是那首《这个年纪》，苍翠有力，活泼俏皮，当时没少单曲循环。今日首推这首歌，作词作曲皆为上品，“想要把自己活成一场梦，一首歌一部电影。”已经折服了我。少不了励志词语，”每天醒来的时候照照镜子，用一个微笑补偿自己”。让人不禁感叹，生命中那些难熬的时光，终将会在某一天找到所有孤独的意义。</p>
-</blockquote>
-</div><div class="tab-pane" id="20181003-4"><blockquote>
-<p>在只有凌晨才不会太拥挤的城市<br>我披星戴月独自穿行</p>
-<p>想要把自己活成一场梦<br>一首歌一部电影<br>就算会半梦半醒就算压（押）不上韵<br>却还是期待所有故事结局</p>
-<p>我会在每天醒来的时候照照镜子<br>用一个微笑补偿自己<br>生活太不容易却仍不甘心<br>问问自己是否拼尽全力</p>
-<p>我也佩服我的勇气<br>也心疼所有孤独的意义</p>
-</blockquote>
-</div></div></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/03/歌单推荐/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-<div>
-  
-</div>
-
-<div>
-      
-</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2294,7 +2299,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2305,7 +2310,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2316,7 +2321,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2431,7 +2436,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.2k字</span>
+  <span class="post-count">博客全站共17.0k字</span>
 </div>
 
         

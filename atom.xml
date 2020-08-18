@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhihening.me/"/>
-  <updated>2020-08-14T06:17:24.967Z</updated>
+  <updated>2020-08-18T11:53:30.360Z</updated>
   <id>http://zhihening.me/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis未授权访问漏洞学习</title>
+    <link href="http://zhihening.me/2020/08/18/Redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://zhihening.me/2020/08/18/Redis未授权访问漏洞学习/</id>
+    <published>2020-08-18T11:53:30.000Z</published>
+    <updated>2020-08-18T11:53:30.360Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SSH暴力破解学习</title>
+    <link href="http://zhihening.me/2020/08/18/SSH%E7%88%86%E7%A0%B4%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://zhihening.me/2020/08/18/SSH爆破学习/</id>
+    <published>2020-08-18T01:37:01.000Z</published>
+    <updated>2020-08-18T11:51:21.965Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="SSH暴力破解描述"><a href="#SSH暴力破解描述" class="headerlink" title="SSH暴力破解描述"></a>SSH暴力破解描述</h2><p>ssh暴力破解是指攻击者通过密码字典或随机组合密码的方式尝试登陆服务器（针对的是全网机器）</p><a id="more"></a><h2 id="检测暴力破解攻击"><a href="#检测暴力破解攻击" class="headerlink" title="检测暴力破解攻击"></a>检测暴力破解攻击</h2><h3 id="1-查看近期登陆日志"><a href="#1-查看近期登陆日志" class="headerlink" title="1.查看近期登陆日志"></a>1.查看近期登陆日志</h3><p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/log/secure</span><br></pre></td></tr></table></figure></p><h3 id="2-计算近期失败的登陆次数"><a href="#2-计算近期失败的登陆次数" class="headerlink" title="2.计算近期失败的登陆次数"></a>2.计算近期失败的登陆次数</h3><p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/log/secure|grep &apos;Failed password for root&apos;|wc -l</span><br></pre></td></tr></table></figure></p><h2 id="暴力破解攻击防御"><a href="#暴力破解攻击防御" class="headerlink" title="暴力破解攻击防御"></a>暴力破解攻击防御</h2><h3 id="1-系统及网络安全"><a href="#1-系统及网络安全" class="headerlink" title="1.系统及网络安全"></a>1.系统及网络安全</h3><p>(1) 定期检查并修复系统漏洞</p><p>(2)定期修改SSH密码，或者配置证书登陆</p><p>(3)修改SSH端口</p><p>(4)禁Ping</p><p>(5)如果长期不用SSH，则将SSH服务关闭</p><p>(6)安装悬镜、云锁、安全狗等软件（一个就好）</p><h3 id="2-查看已经登陆成功的日志"><a href="#2-查看已经登陆成功的日志" class="headerlink" title="2.查看已经登陆成功的日志"></a>2.查看已经登陆成功的日志</h3><p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/log/secure|grep &apos;Accepted password&apos;</span><br></pre></td></tr></table></figure></p><p>参考自：<a href="https://www.cnblogs.com/rui517hua20/p/13096886.html" target="_blank" rel="noopener">SSH暴力破解的解读与防御</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;SSH暴力破解描述&quot;&gt;&lt;a href=&quot;#SSH暴力破解描述&quot; class=&quot;headerlink&quot; title=&quot;SSH暴力破解描述&quot;&gt;&lt;/a&gt;SSH暴力破解描述&lt;/h2&gt;&lt;p&gt;ssh暴力破解是指攻击者通过密码字典或随机组合密码的方式尝试登陆服务器（针对的是全网机器）&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="study" scheme="http://zhihening.me/categories/study/"/>
+    
+    
+      <category term="SSH" scheme="http://zhihening.me/tags/SSH/"/>
+    
+  </entry>
   
   <entry>
     <title>hello2020</title>
